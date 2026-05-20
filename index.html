@@ -20,11 +20,12 @@ body{
     min-height:100vh;
     overflow-x:hidden;
     display:flex;
-    justify-content:center;
+    justify-content:flex-start;
     align-items:center;
     flex-direction:column;
     color:white;
     background: radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
+    padding-bottom:50px;
 }
 
 /* LIGHT MODE */
@@ -47,11 +48,16 @@ body.light{
     background:white;
     border-radius:50%;
     animation:float linear infinite;
+    opacity:.7;
 }
 
 @keyframes float{
-    from{transform:translateY(100vh);}
-    to{transform:translateY(-100vh);}
+    from{
+        transform:translateY(100vh);
+    }
+    to{
+        transform:translateY(-100vh);
+    }
 }
 
 /* BUTTONS */
@@ -72,6 +78,12 @@ button{
     font-weight:600;
     background:linear-gradient(45deg,#ff006e,#8338ec);
     color:white;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(255,0,110,.4);
+}
+
+button:hover{
+    transform:scale(1.05);
 }
 
 /* MAIN */
@@ -83,7 +95,8 @@ button{
     flex-wrap:wrap;
     justify-content:center;
     align-items:center;
-    margin-top:80px;
+    margin-top:120px;
+    width:100%;
 }
 
 /* CARD */
@@ -97,10 +110,12 @@ button{
     text-align:center;
     overflow:hidden;
     transition:.4s;
+    box-shadow:0 0 30px rgba(255,0,110,.15);
 }
 
 .card:hover{
     transform:translateY(-10px) scale(1.02);
+    box-shadow:0 0 40px rgba(255,0,110,.4);
 }
 
 .header{
@@ -116,6 +131,11 @@ button{
     margin-top:-75px;
     border:5px solid rgba(255,255,255,.3);
     cursor:pointer;
+    transition:.4s;
+}
+
+.card img:hover{
+    transform:scale(1.07);
 }
 
 .card h2{
@@ -136,6 +156,7 @@ button{
     padding:10px 20px;
     border-radius:30px;
     background:linear-gradient(45deg,#ff006e,#ff4da6);
+    box-shadow:0 0 20px rgba(255,0,110,.5);
 }
 
 /* CENTER */
@@ -148,25 +169,33 @@ button{
     animation:pulse 1.5s infinite;
     text-shadow:0 0 40px #ff2d75;
     cursor:pointer;
+    user-select:none;
 }
 
 @keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.25);}
-    100%{transform:scale(1);}
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.25);
+    }
+    100%{
+        transform:scale(1);
+    }
 }
 
 .center h1{
     font-family:'Great Vibes',cursive;
     font-size:60px;
     color:#ff9ad5;
+    text-shadow:0 0 20px rgba(255,0,110,.5);
 }
 
 /* MODAL */
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.85);
+    background:rgba(0,0,0,.9);
     display:none;
     justify-content:center;
     align-items:center;
@@ -177,6 +206,7 @@ button{
     width:80%;
     max-width:420px;
     border-radius:20px;
+    box-shadow:0 0 40px rgba(255,255,255,.3);
 }
 
 /* HEART EFFECT */
@@ -184,11 +214,18 @@ button{
     position:absolute;
     font-size:20px;
     animation:up 1s linear forwards;
+    pointer-events:none;
 }
 
 @keyframes up{
-    from{transform:translateY(0);opacity:1;}
-    to{transform:translateY(-120px);opacity:0;}
+    from{
+        transform:translateY(0);
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px);
+        opacity:0;
+    }
 }
 
 /* MESSAGES */
@@ -196,7 +233,14 @@ button{
     width:90%;
     max-width:900px;
     margin-top:60px;
+    position:relative;
+    z-index:5;
     text-align:center;
+}
+
+.section h2{
+    margin-bottom:20px;
+    font-size:35px;
 }
 
 .box{
@@ -204,9 +248,11 @@ button{
     backdrop-filter:blur(15px);
     padding:20px;
     border-radius:25px;
+    border:1px solid rgba(255,255,255,.1);
 }
 
-input,textarea{
+input,
+textarea{
     width:100%;
     padding:15px;
     margin-top:10px;
@@ -215,33 +261,72 @@ input,textarea{
     background:rgba(255,255,255,0.1);
     color:white;
     outline:none;
+    font-size:15px;
+}
+
+body.light input,
+body.light textarea{
+    color:#111;
+    background:rgba(0,0,0,.05);
 }
 
 textarea{
-    height:90px;
+    height:100px;
     resize:none;
 }
 
 .msg{
-    margin-top:15px;
-    padding:15px;
+    margin-top:20px;
+    padding:20px;
     border-radius:20px;
     background:rgba(255,255,255,0.08);
     border-left:4px solid #ff006e;
     text-align:left;
     position:relative;
+    animation:show .4s ease;
+}
+
+@keyframes show{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .copy{
     position:absolute;
-    right:10px;
-    top:10px;
+    right:15px;
+    top:15px;
     font-size:12px;
     cursor:pointer;
     opacity:.7;
 }
 
-.copy:hover{opacity:1;}
+.copy:hover{
+    opacity:1;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+    .container{
+        flex-direction:column;
+        gap:30px;
+    }
+
+    .center .heart{
+        font-size:100px;
+    }
+
+    .center h1{
+        font-size:50px;
+    }
+
+}
 
 </style>
 </head>
@@ -259,27 +344,59 @@ textarea{
 
     <!-- YOU -->
     <div class="card">
+
         <div class="header"></div>
-        <img src="https://files.catbox.moe/gpncs4.jpg" onclick="openImg(this.src)">
+
+        <img 
+        src="https://files.catbox.moe/gpncs4.jpg"
+        onclick="openImg(this.src)">
+
         <h2>Rayen</h2>
-        <p>My heart sees only one direction: love.</p>
-        <div class="badge">Forever Mine ❤</div>
+
+        <p>
+            My heart sees only one direction: love.
+        </p>
+
+        <div class="badge">
+            Forever Mine ❤
+        </div>
+
     </div>
 
     <!-- CENTER -->
     <div class="center">
-        <div class="heart" onclick="heartClick(event)">❤</div>
+
+        <div class="heart" onclick="heartClick(event)">
+            ❤
+        </div>
+
         <h1>Alma</h1>
-        <p>Two Hearts • One Vision</p>
+
+        <p>
+            Two Hearts • One Vision
+        </p>
+
     </div>
 
     <!-- HER -->
     <div class="card">
+
         <div class="header"></div>
-        <img src="https://files.catbox.moe/kwlmq4.jpg" onclick="openImg(this.src)">
+
+        <img 
+        src="https://files.catbox.moe/kwlmq4.jpg"
+        onclick="openImg(this.src)">
+
         <h2>Alma</h2>
-        <p>The light that makes my world visible.</p>
-        <div class="badge">Soul Mate ✨</div>
+
+        <p>
+            The light that makes my world visible.
+        </p>
+
+        <div class="badge">
+            Soul Mate ✨
+        </div>
+
     </div>
 
 </div>
@@ -290,9 +407,19 @@ textarea{
     <h2>💌 Love Messages</h2>
 
     <div class="box">
-        <input id="title" placeholder="Title">
-        <textarea id="text" placeholder="Write love message..."></textarea>
-        <button onclick="addMsg()">Add ❤</button>
+
+        <input 
+        id="title" 
+        placeholder="Message title...">
+
+        <textarea 
+        id="text" 
+        placeholder="Write your love message here..."></textarea>
+
+        <button onclick="addMsg()">
+            Add ❤️
+        </button>
+
     </div>
 
     <div id="messages"></div>
@@ -301,81 +428,216 @@ textarea{
 
 <!-- MODAL -->
 <div class="modal" id="modal" onclick="closeImg()">
+
     <img id="modalImg">
+
 </div>
 
 <script>
 
-/* BG */
+/* BACKGROUND */
+
 const bg=document.getElementById("bg");
 
 for(let i=0;i<120;i++){
+
     let s=document.createElement("span");
+
     s.style.left=Math.random()*100+"%";
-    s.style.animationDuration=(Math.random()*8+4)+"s";
+
+    s.style.animationDuration=
+    (Math.random()*8+4)+"s";
+
+    s.style.opacity=Math.random();
+
     bg.appendChild(s);
 }
 
 /* MODE */
+
 function toggleMode(){
+
     document.body.classList.toggle("light");
+
 }
 
 /* MUSIC */
-let music=new Audio("https://files.catbox.moe/vfkb97.mp3");
+
+let music=new Audio(
+"https://files.catbox.moe/vfkb97.mp3"
+);
+
 music.loop=true;
+
 let play=false;
 
 function toggleMusic(){
+
     play=!play;
-    play ? music.play() : music.pause();
+
+    if(play){
+
+        music.play();
+
+    }else{
+
+        music.pause();
+
+    }
+
 }
 
-/* IMAGE */
+/* IMAGE VIEW */
+
 function openImg(src){
-    document.getElementById("modal").style.display="flex";
-    document.getElementById("modalImg").src=src;
+
+    document.getElementById("modal")
+    .style.display="flex";
+
+    document.getElementById("modalImg")
+    .src=src;
+
 }
 
 function closeImg(){
-    document.getElementById("modal").style.display="none";
+
+    document.getElementById("modal")
+    .style.display="none";
+
 }
 
-/* HEART */
+/* HEART EFFECT */
+
 function heartClick(e){
+
     let h=document.createElement("div");
+
     h.className="heart-float";
+
     h.innerHTML="❤";
+
     h.style.left=e.clientX+"px";
+
     h.style.top=e.clientY+"px";
+
     document.body.appendChild(h);
-    setTimeout(()=>h.remove(),1000);
+
+    setTimeout(()=>{
+
+        h.remove();
+
+    },1000);
+
 }
 
-/* MESSAGES */
+/* =========================
+   SAVE LOVE MESSAGES
+========================= */
+
+let messages =
+JSON.parse(
+localStorage.getItem("loveMessages")
+) || [];
+
+/* RENDER */
+
+function renderMessages(){
+
+    const container=
+    document.getElementById("messages");
+
+    container.innerHTML="";
+
+    messages.forEach((msg,index)=>{
+
+        let div=document.createElement("div");
+
+        div.className="msg";
+
+        div.innerHTML=`
+
+            <b>
+                ${msg.title || "Love Message"}
+            </b>
+
+            <br><br>
+
+            ${msg.text}
+
+            <span 
+            class="copy"
+            onclick="copyText(this)">
+                copy
+            </span>
+
+        `;
+
+        container.appendChild(div);
+
+    });
+
+}
+
+/* ADD */
+
 function addMsg(){
 
-    let title=document.getElementById("title").value;
-    let text=document.getElementById("text").value;
+    let title=
+    document.getElementById("title").value;
 
-    if(!text) return;
+    let text=
+    document.getElementById("text").value;
 
-    let div=document.createElement("div");
-    div.className="msg";
+    if(!text.trim()) return;
 
-    div.innerHTML=`
-        <b>${title}</b><br><br>${text}
-        <span class="copy" onclick="copyText(this)">copy</span>
-    `;
+    let newMsg={
 
-    document.getElementById("messages").prepend(div);
+        title:title,
+
+        text:text
+
+    };
+
+    messages.unshift(newMsg);
+
+    /* SAVE */
+
+    localStorage.setItem(
+
+        "loveMessages",
+
+        JSON.stringify(messages)
+
+    );
+
+    /* REFRESH */
+
+    renderMessages();
+
+    /* CLEAR */
+
+    document.getElementById("title").value="";
+
+    document.getElementById("text").value="";
+
 }
+
+/* COPY */
 
 function copyText(el){
-    let text=el.parentElement.innerText;
+
+    let text=
+    el.parentElement.innerText;
+
     navigator.clipboard.writeText(text);
+
     alert("Copied ❤");
+
 }
+
+/* LOAD */
+
+renderMessages();
 
 </script>
 
