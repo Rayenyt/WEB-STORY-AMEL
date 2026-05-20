@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Love Page</title>
+<title>Love Vision Pro</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -19,270 +19,177 @@ body{
     font-family:'Poppins',sans-serif;
     min-height:100vh;
     overflow:hidden;
-    background:
-    radial-gradient(circle at top left,#ff006e 0%,transparent 25%),
-    radial-gradient(circle at bottom right,#8338ec 0%,transparent 25%),
-    linear-gradient(135deg,#05010d,#12001f,#1b002c);
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
     color:white;
-    position:relative;
+    background: radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
+    transition:.5s;
 }
 
-/* Animated Background */
+/* LIGHT MODE */
+body.light{
+    background: radial-gradient(circle at top,#ffb3d1,#ffe6f1 60%,#fff);
+    color:#111;
+}
+
+/* BACKGROUND */
 .bg{
     position:absolute;
     inset:0;
-    overflow:hidden;
 }
 
 .bg span{
     position:absolute;
-    width:4px;
-    height:4px;
+    width:3px;
+    height:3px;
     background:white;
     border-radius:50%;
-    opacity:.5;
-    animation:stars linear infinite;
+    animation:float linear infinite;
 }
 
-@keyframes stars{
-    from{
-        transform:translateY(100vh);
-    }
-    to{
-        transform:translateY(-100vh);
-    }
+@keyframes float{
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-100vh);}
+}
+
+/* TOP BUTTON */
+.toggle{
+    position:absolute;
+    top:20px;
+    right:20px;
+    z-index:10;
+    padding:10px 18px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff006e,#8338ec);
+    color:white;
+    font-weight:600;
 }
 
 /* MAIN */
-.main{
+.container{
     position:relative;
     z-index:5;
     display:flex;
+    gap:60px;
     align-items:center;
     justify-content:center;
-    gap:50px;
     flex-wrap:wrap;
-    margin-top:20px;
 }
 
-/* LOVE CARD */
-.love-card{
+/* CARD */
+.card{
     width:320px;
     height:430px;
-    border-radius:35px;
-    position:relative;
-    overflow:hidden;
+    border-radius:30px;
     background:rgba(255,255,255,0.06);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.12);
-    box-shadow:
-    0 0 40px rgba(255,0,128,.25),
-    inset 0 0 25px rgba(255,255,255,.05);
-    transition:.5s;
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.15);
+    text-align:center;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 0 40px rgba(255,0,120,.2);
 }
 
-.love-card:hover{
-    transform:translateY(-12px) scale(1.02);
-    box-shadow:
-    0 0 70px rgba(255,0,128,.55);
+body.light .card{
+    background:rgba(255,255,255,0.8);
 }
 
-.top-gradient{
-    position:absolute;
-    width:100%;
-    height:170px;
+.card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+/* HEADER */
+.header{
+    height:150px;
     background:linear-gradient(135deg,#ff006e,#8338ec);
 }
 
-.profile{
-    position:relative;
-    z-index:2;
-    display:flex;
-    justify-content:center;
-    margin-top:80px;
-}
-
-.profile img{
-    width:170px;
-    height:170px;
+/* IMAGE */
+.card img{
+    width:150px;
+    height:150px;
     border-radius:50%;
     object-fit:cover;
-    border:6px solid rgba(255,255,255,.18);
-    box-shadow:0 0 35px rgba(255,0,120,.6);
+    margin-top:-75px;
+    border:5px solid rgba(255,255,255,.3);
+    cursor:pointer;
 }
 
-.info{
-    text-align:center;
-    margin-top:20px;
-    padding:0 20px;
+/* TEXT */
+.card h2{
+    margin-top:15px;
+    font-size:28px;
 }
 
-.info h2{
-    font-size:32px;
-    font-weight:700;
-}
-
-.info p{
+.card p{
+    font-size:14px;
+    opacity:.85;
     margin-top:10px;
-    opacity:.8;
-    font-size:15px;
-    line-height:1.7;
+    padding:0 15px;
 }
 
 .badge{
     display:inline-block;
-    margin-top:18px;
-    padding:10px 24px;
-    border-radius:50px;
+    margin-top:15px;
+    padding:10px 20px;
+    border-radius:30px;
     background:linear-gradient(45deg,#ff006e,#ff4da6);
-    font-weight:600;
-    box-shadow:0 0 20px rgba(255,0,128,.5);
 }
 
-/* CENTER HEART */
-.center-box{
-    position:relative;
-    width:260px;
-    height:260px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+/* CENTER */
+.center{
+    text-align:center;
 }
 
-.glow{
-    position:absolute;
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    background:rgba(255,0,128,.2);
-    filter:blur(50px);
-}
-
-.heart{
-    font-size:120px;
-    animation:pulse 1.8s infinite;
-    text-shadow:0 0 30px rgba(255,0,128,.9);
+.center .heart{
+    font-size:130px;
+    animation:pulse 1.5s infinite;
+    text-shadow:0 0 40px #ff2d75;
 }
 
 @keyframes pulse{
-    0%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.15);
-    }
-    100%{
-        transform:scale(1);
-    }
+    0%{transform:scale(1);}
+    50%{transform:scale(1.25);}
+    100%{transform:scale(1);}
 }
 
-.love-text{
-    position:absolute;
-    bottom:15px;
-    text-align:center;
-}
-
-.love-text h1{
+.center h1{
     font-family:'Great Vibes',cursive;
-    font-size:55px;
+    font-size:60px;
     color:#ff9ad5;
 }
 
-.love-text p{
-    font-size:15px;
-    opacity:.85;
+/* IMAGE MODAL */
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.8);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:20;
 }
 
-/* CONTROL PANEL */
-.panel{
-    position:relative;
-    z-index:5;
-    width:90%;
-    max-width:850px;
-    margin-top:40px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-    backdrop-filter:blur(18px);
-    border-radius:30px;
-    padding:30px;
-    box-shadow:0 0 30px rgba(255,0,128,.2);
+.modal img{
+    width:80%;
+    max-width:400px;
+    border-radius:20px;
 }
 
-.panel h3{
-    text-align:center;
-    font-size:30px;
-    margin-bottom:25px;
+/* HEARTS CLICK */
+.heart-float{
+    position:absolute;
+    font-size:20px;
+    animation:up 1s linear forwards;
 }
 
-.grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.input-box{
-    display:flex;
-    flex-direction:column;
-}
-
-.input-box label{
-    margin-bottom:10px;
-    font-size:14px;
-    opacity:.85;
-}
-
-.input-box input{
-    padding:16px;
-    border:none;
-    outline:none;
-    border-radius:16px;
-    background:rgba(255,255,255,.08);
-    color:white;
-    font-size:15px;
-}
-
-.input-box input::placeholder{
-    color:#ccc;
-}
-
-.btn{
-    width:100%;
-    margin-top:25px;
-    padding:18px;
-    border:none;
-    border-radius:18px;
-    background:linear-gradient(45deg,#ff006e,#8338ec);
-    color:white;
-    font-size:16px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.4s;
-}
-
-.btn:hover{
-    transform:scale(1.02);
-    box-shadow:0 0 30px rgba(255,0,128,.5);
-}
-
-@media(max-width:950px){
-
-    body{
-        overflow:auto;
-        padding:40px 0;
-    }
-
-    .main{
-        flex-direction:column;
-    }
-
-    .grid{
-        grid-template-columns:1fr;
-    }
-
+@keyframes up{
+    from{transform:translateY(0);opacity:1;}
+    to{transform:translateY(-100px);opacity:0;}
 }
 
 </style>
@@ -290,179 +197,81 @@ body{
 
 <body>
 
-<!-- STARS -->
+<button class="toggle" onclick="toggleMode()">Toggle Mode 🌗</button>
+
 <div class="bg" id="bg"></div>
 
-<div class="main">
+<div class="container">
 
-    <!-- YOUR CARD -->
-    <div class="love-card">
-
-        <div class="top-gradient"></div>
-
-        <div class="profile">
-            <img id="yourImg"
-            src="https://i.imgur.com/8Km9tLL.jpg">
-        </div>
-
-        <div class="info">
-            <h2 id="yourName">Your Name</h2>
-
-            <p>
-                A beautiful soul filled with love,
-                happiness and unforgettable memories.
-            </p>
-
-            <span class="badge">Forever Mine ❤</span>
-        </div>
-
+    <!-- YOU -->
+    <div class="card">
+        <div class="header"></div>
+        <img src="https://ibb.co/Gv03htxn" onclick="openImg(this.src)">
+        <h2>Rayen</h2>
+        <p>My heart sees only one direction: love.</p>
+        <div class="badge">Forever Mine ❤</div>
     </div>
 
     <!-- CENTER -->
-    <div class="center-box">
-
-        <div class="glow"></div>
-
-        <div class="heart">❤</div>
-
-        <div class="love-text">
-            <h1>Alma</h1>
-            <p>Two Hearts • One Soul</p>
-        </div>
-
+    <div class="center">
+        <div class="heart" onclick="heartClick(event)">❤</div>
+        <h1>Alma</h1>
+        <p>Two Hearts • One Vision</p>
     </div>
 
-    <!-- ALMA CARD -->
-    <div class="love-card">
-
-        <div class="top-gradient"></div>
-
-        <div class="profile">
-            <img id="almaImg"
-            src="https://i.imgur.com/QIrZWGIs.jpg">
-        </div>
-
-        <div class="info">
-            <h2>Alma</h2>
-
-            <p>
-                The queen of my heart,
-                my happiness and my forever love.
-            </p>
-
-            <span class="badge">Soul Mate ✨</span>
-        </div>
-
+    <!-- HER -->
+    <div class="card">
+        <div class="header"></div>
+        <img src="https://ibb.co/bMCRd9pC" onclick="openImg(this.src)">
+        <h2>Alma</h2>
+        <p>The light that makes my world visible.</p>
+        <div class="badge">Soul Mate ✨</div>
     </div>
 
 </div>
 
-<!-- CONTROL PANEL -->
-<div class="panel">
-
-    <h3>Customize Love Page ✨</h3>
-
-    <div class="grid">
-
-        <div class="input-box">
-            <label>Your Name</label>
-
-            <input
-            type="text"
-            id="nameInput"
-            placeholder="Enter your name">
-        </div>
-
-        <div class="input-box">
-            <label>Your Image Link</label>
-
-            <input
-            type="text"
-            id="yourLink"
-            placeholder="Paste your image link">
-        </div>
-
-        <div class="input-box">
-            <label>Alma Image Link</label>
-
-            <input
-            type="text"
-            id="almaLink"
-            placeholder="Paste Alma image link">
-        </div>
-
-        <div class="input-box">
-            <label>Custom Love Text</label>
-
-            <input
-            type="text"
-            id="loveText"
-            placeholder="Example: Forever Together">
-        </div>
-
-    </div>
-
-    <button class="btn" onclick="updatePage()">
-        Update Love Page ❤
-    </button>
-
+<!-- MODAL -->
+<div class="modal" id="modal" onclick="closeImg()">
+    <img id="modalImg">
 </div>
 
 <script>
 
 /* STARS */
-const bg = document.getElementById("bg");
+const bg=document.getElementById("bg");
 
 for(let i=0;i<120;i++){
-
-    const star = document.createElement("span");
-
-    star.style.left = Math.random()*100+"%";
-
-    star.style.top = Math.random()*100+"%";
-
-    star.style.animationDuration =
-    (Math.random()*10+5)+"s";
-
-    star.style.opacity = Math.random();
-
-    bg.appendChild(star);
+    let s=document.createElement("span");
+    s.style.left=Math.random()*100+"%";
+    s.style.animationDuration=(Math.random()*8+4)+"s";
+    bg.appendChild(s);
 }
 
-/* UPDATE PAGE */
-function updatePage(){
+/* MODE */
+function toggleMode(){
+    document.body.classList.toggle("light");
+}
 
-    const name =
-    document.getElementById("nameInput").value;
+/* IMAGE ZOOM */
+function openImg(src){
+    document.getElementById("modal").style.display="flex";
+    document.getElementById("modalImg").src=src;
+}
 
-    const yourLink =
-    document.getElementById("https://ibb.co/Gv03htxn").value;
+function closeImg(){
+    document.getElementById("modal").style.display="none";
+}
 
-    const almaLink =
-    document.getElementById("https://ibb.co/bMCRd9pC").value;
+/* HEART CLICK EFFECT */
+function heartClick(e){
+    let h=document.createElement("div");
+    h.className="heart-float";
+    h.innerHTML="❤";
+    h.style.left=e.clientX+"px";
+    h.style.top=e.clientY+"px";
+    document.body.appendChild(h);
 
-    const loveText =
-    document.getElementById("Forever Together ❤").value;
-
-    if(name){
-        document.getElementById("RAYEN").innerText =
-        name;
-    }
-
-    if(yourLink){
-        document.getElementById("yourImg").src =
-        yourLink;
-    }
-
-    if(almaLink){
-        document.getElementById("almaImg").src =
-        almaLink;
-    }
-
-    if(loveText){
-        document.querySelector(".love-text p").innerText =
-        loveText;
-    }
+    setTimeout(()=>h.remove(),1000);
 }
 
 </script>
