@@ -24,17 +24,21 @@ body{
     align-items:center;
     flex-direction:column;
     color:white;
-    background: radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
+    background:
+    radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
     padding-bottom:50px;
 }
 
 /* LIGHT MODE */
+
 body.light{
-    background: radial-gradient(circle at top,#ffd1e8,#fff 60%,#f7f7f7);
+    background:
+    radial-gradient(circle at top,#ffd1e8,#fff 60%,#f7f7f7);
     color:#111;
 }
 
 /* BACKGROUND */
+
 .bg{
     position:fixed;
     inset:0;
@@ -52,42 +56,59 @@ body.light{
 }
 
 @keyframes float{
+
     from{
         transform:translateY(100vh);
     }
+
     to{
         transform:translateY(-100vh);
     }
+
 }
 
 /* BUTTONS */
+
 .top-bar{
+
     position:fixed;
     top:15px;
     right:15px;
     z-index:20;
     display:flex;
     gap:10px;
+
 }
 
 button{
+
     padding:10px 15px;
     border:none;
     border-radius:15px;
     cursor:pointer;
     font-weight:600;
-    background:linear-gradient(45deg,#ff006e,#8338ec);
+
+    background:
+    linear-gradient(45deg,#ff006e,#8338ec);
+
     color:white;
     transition:.3s;
-    box-shadow:0 0 20px rgba(255,0,110,.4);
+
+    box-shadow:
+    0 0 20px rgba(255,0,110,.4);
+
 }
 
 button:hover{
+
     transform:scale(1.05);
+
 }
 
 /* MAIN */
+
 .container{
+
     position:relative;
     z-index:5;
     display:flex;
@@ -97,233 +118,353 @@ button:hover{
     align-items:center;
     margin-top:120px;
     width:100%;
+
 }
 
 /* CARD */
+
 .card{
+
     width:320px;
     height:430px;
     border-radius:30px;
-    background:rgba(255,255,255,0.06);
+
+    background:
+    rgba(255,255,255,0.06);
+
     backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,0.15);
+
+    border:
+    1px solid rgba(255,255,255,0.15);
+
     text-align:center;
     overflow:hidden;
     transition:.4s;
-    box-shadow:0 0 30px rgba(255,0,110,.15);
+
+    box-shadow:
+    0 0 30px rgba(255,0,110,.15);
+
 }
 
 .card:hover{
+
     transform:translateY(-10px) scale(1.02);
-    box-shadow:0 0 40px rgba(255,0,110,.4);
+
+    box-shadow:
+    0 0 40px rgba(255,0,110,.4);
+
 }
 
 .header{
+
     height:150px;
-    background:linear-gradient(135deg,#ff006e,#8338ec);
+
+    background:
+    linear-gradient(135deg,#ff006e,#8338ec);
+
 }
 
 .card img{
+
     width:150px;
     height:150px;
     border-radius:50%;
     object-fit:cover;
     margin-top:-75px;
-    border:5px solid rgba(255,255,255,.3);
+
+    border:
+    5px solid rgba(255,255,255,.3);
+
     cursor:pointer;
     transition:.4s;
+
 }
 
 .card img:hover{
+
     transform:scale(1.07);
+
 }
 
 .card h2{
+
     margin-top:15px;
     font-size:28px;
+
 }
 
 .card p{
+
     font-size:14px;
     opacity:.85;
     margin-top:10px;
     padding:0 15px;
+
 }
 
 .badge{
+
     display:inline-block;
     margin-top:15px;
     padding:10px 20px;
     border-radius:30px;
-    background:linear-gradient(45deg,#ff006e,#ff4da6);
-    box-shadow:0 0 20px rgba(255,0,110,.5);
+
+    background:
+    linear-gradient(45deg,#ff006e,#ff4da6);
+
+    box-shadow:
+    0 0 20px rgba(255,0,110,.5);
+
 }
 
 /* CENTER */
+
 .center{
     text-align:center;
 }
 
 .center .heart{
+
     font-size:130px;
     animation:pulse 1.5s infinite;
-    text-shadow:0 0 40px #ff2d75;
+
+    text-shadow:
+    0 0 40px #ff2d75;
+
     cursor:pointer;
     user-select:none;
+
 }
 
 @keyframes pulse{
+
     0%{
         transform:scale(1);
     }
+
     50%{
         transform:scale(1.25);
     }
+
     100%{
         transform:scale(1);
     }
+
 }
 
 .center h1{
+
     font-family:'Great Vibes',cursive;
     font-size:60px;
     color:#ff9ad5;
-    text-shadow:0 0 20px rgba(255,0,110,.5);
+
+    text-shadow:
+    0 0 20px rgba(255,0,110,.5);
+
 }
 
 /* MODAL */
+
 .modal{
+
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.9);
+
+    background:
+    rgba(0,0,0,.9);
+
     display:none;
     justify-content:center;
     align-items:center;
     z-index:50;
+
 }
 
 .modal img{
+
     width:80%;
     max-width:420px;
     border-radius:20px;
-    box-shadow:0 0 40px rgba(255,255,255,.3);
+
+    box-shadow:
+    0 0 40px rgba(255,255,255,.3);
+
 }
 
 /* HEART EFFECT */
+
 .heart-float{
+
     position:absolute;
     font-size:20px;
     animation:up 1s linear forwards;
     pointer-events:none;
+
 }
 
 @keyframes up{
+
     from{
+
         transform:translateY(0);
         opacity:1;
+
     }
+
     to{
+
         transform:translateY(-120px);
         opacity:0;
+
     }
+
 }
 
-/* MESSAGES */
+/* LOVE MESSAGES */
+
 .section{
+
     width:90%;
     max-width:900px;
     margin-top:60px;
     position:relative;
     z-index:5;
     text-align:center;
+
 }
 
 .section h2{
+
     margin-bottom:20px;
     font-size:35px;
+
 }
 
 .box{
-    background:rgba(255,255,255,0.06);
+
+    background:
+    rgba(255,255,255,0.06);
+
     backdrop-filter:blur(15px);
+
     padding:20px;
     border-radius:25px;
-    border:1px solid rgba(255,255,255,.1);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
 }
 
 input,
 textarea{
+
     width:100%;
     padding:15px;
     margin-top:10px;
     border:none;
     border-radius:15px;
-    background:rgba(255,255,255,0.1);
+
+    background:
+    rgba(255,255,255,0.1);
+
     color:white;
     outline:none;
     font-size:15px;
+
 }
 
 body.light input,
 body.light textarea{
+
     color:#111;
-    background:rgba(0,0,0,.05);
+
+    background:
+    rgba(0,0,0,.05);
+
 }
 
 textarea{
+
     height:100px;
     resize:none;
+
 }
 
 .msg{
+
     margin-top:20px;
     padding:20px;
     border-radius:20px;
-    background:rgba(255,255,255,0.08);
-    border-left:4px solid #ff006e;
+
+    background:
+    rgba(255,255,255,0.08);
+
+    border-left:
+    4px solid #ff006e;
+
     text-align:left;
     position:relative;
+
     animation:show .4s ease;
+
 }
 
 @keyframes show{
+
     from{
+
         opacity:0;
         transform:translateY(20px);
+
     }
+
     to{
+
         opacity:1;
         transform:translateY(0);
+
     }
+
 }
 
 .copy{
+
     position:absolute;
     right:15px;
     top:15px;
     font-size:12px;
     cursor:pointer;
     opacity:.7;
+
 }
 
 .copy:hover{
+
     opacity:1;
+
 }
 
 /* MOBILE */
+
 @media(max-width:900px){
 
     .container{
+
         flex-direction:column;
         gap:30px;
+
     }
 
     .center .heart{
+
         font-size:100px;
+
     }
 
     .center h1{
+
         font-size:50px;
+
     }
 
 }
@@ -333,28 +474,43 @@ textarea{
 
 <body>
 
+<!-- TOP BUTTONS -->
+
 <div class="top-bar">
-    <button onclick="toggleMode()">🌗 Mode</button>
-    <button onclick="toggleMusic()">🎵 Music</button>
+
+    <button onclick="toggleMode()">
+        🌗 Mode
+    </button>
+
+    <button onclick="toggleMusic()">
+        🎵 Music
+    </button>
+
 </div>
 
+<!-- BACKGROUND -->
+
 <div class="bg" id="bg"></div>
+
+<!-- MAIN -->
 
 <div class="container">
 
     <!-- YOU -->
+
     <div class="card">
 
         <div class="header"></div>
 
-        <img 
+        <img
         src="https://files.catbox.moe/gpncs4.jpg"
         onclick="openImg(this.src)">
 
         <h2>Rayen</h2>
 
         <p>
-            My heart sees only one direction: love.
+            My heart sees only one direction:
+            love.
         </p>
 
         <div class="badge">
@@ -364,9 +520,11 @@ textarea{
     </div>
 
     <!-- CENTER -->
+
     <div class="center">
 
-        <div class="heart" onclick="heartClick(event)">
+        <div class="heart"
+        onclick="heartClick(event)">
             ❤
         </div>
 
@@ -379,11 +537,12 @@ textarea{
     </div>
 
     <!-- HER -->
+
     <div class="card">
 
         <div class="header"></div>
 
-        <img 
+        <img
         src="https://files.catbox.moe/kwlmq4.jpg"
         onclick="openImg(this.src)">
 
@@ -402,18 +561,19 @@ textarea{
 </div>
 
 <!-- LOVE MESSAGES -->
+
 <div class="section">
 
     <h2>💌 Love Messages</h2>
 
     <div class="box">
 
-        <input 
-        id="title" 
+        <input
+        id="title"
         placeholder="Message title...">
 
-        <textarea 
-        id="text" 
+        <textarea
+        id="text"
         placeholder="Write your love message here..."></textarea>
 
         <button onclick="addMsg()">
@@ -427,33 +587,69 @@ textarea{
 </div>
 
 <!-- MODAL -->
-<div class="modal" id="modal" onclick="closeImg()">
+
+<div
+class="modal"
+id="modal"
+onclick="closeImg()">
 
     <img id="modalImg">
 
 </div>
 
-<script>
+<!-- SCRIPT -->
 
-/* BACKGROUND */
+<script type="module">
 
-const bg=document.getElementById("bg");
+/* =========================
+   SUPABASE
+========================= */
+
+import { createClient }
+
+from
+'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+const supabaseUrl =
+"https://vjsphepnycchogektxcq.supabase.co";
+
+const supabaseKey =
+"sb_publishable_TzMnSWGJWmQF190_x9Fxfg_2tbr1gnX";
+
+const supabase =
+createClient(
+    supabaseUrl,
+    supabaseKey
+);
+
+/* =========================
+   BACKGROUND
+========================= */
+
+const bg=
+document.getElementById("bg");
 
 for(let i=0;i<120;i++){
 
-    let s=document.createElement("span");
+    let s=
+    document.createElement("span");
 
-    s.style.left=Math.random()*100+"%";
+    s.style.left=
+    Math.random()*100+"%";
 
     s.style.animationDuration=
     (Math.random()*8+4)+"s";
 
-    s.style.opacity=Math.random();
+    s.style.opacity=
+    Math.random();
 
     bg.appendChild(s);
+
 }
 
-/* MODE */
+/* =========================
+   MODE
+========================= */
 
 function toggleMode(){
 
@@ -461,7 +657,12 @@ function toggleMode(){
 
 }
 
-/* MUSIC */
+window.toggleMode=
+toggleMode;
+
+/* =========================
+   MUSIC
+========================= */
 
 let music=new Audio(
 "https://files.catbox.moe/vfkb97.mp3"
@@ -475,19 +676,16 @@ function toggleMusic(){
 
     play=!play;
 
-    if(play){
-
-        music.play();
-
-    }else{
-
-        music.pause();
-
-    }
+    play ? music.play() : music.pause();
 
 }
 
-/* IMAGE VIEW */
+window.toggleMusic=
+toggleMusic;
+
+/* =========================
+   IMAGE VIEW
+========================= */
 
 function openImg(src){
 
@@ -499,6 +697,8 @@ function openImg(src){
 
 }
 
+window.openImg=openImg;
+
 function closeImg(){
 
     document.getElementById("modal")
@@ -506,19 +706,27 @@ function closeImg(){
 
 }
 
-/* HEART EFFECT */
+window.closeImg=closeImg;
+
+/* =========================
+   HEART EFFECT
+========================= */
 
 function heartClick(e){
 
-    let h=document.createElement("div");
+    let h=
+    document.createElement("div");
 
-    h.className="heart-float";
+    h.className=
+    "heart-float";
 
     h.innerHTML="❤";
 
-    h.style.left=e.clientX+"px";
+    h.style.left=
+    e.clientX+"px";
 
-    h.style.top=e.clientY+"px";
+    h.style.top=
+    e.clientY+"px";
 
     document.body.appendChild(h);
 
@@ -530,114 +738,149 @@ function heartClick(e){
 
 }
 
+window.heartClick=
+heartClick;
+
 /* =========================
-   SAVE LOVE MESSAGES
+   COPY
 ========================= */
 
-let messages =
-JSON.parse(
-localStorage.getItem("loveMessages")
-) || [];
+function copyText(text){
 
-/* RENDER */
-
-function renderMessages(){
-
-    const container=
-    document.getElementById("messages");
-
-    container.innerHTML="";
-
-    messages.forEach((msg,index)=>{
-
-        let div=document.createElement("div");
-
-        div.className="msg";
-
-        div.innerHTML=`
-
-            <b>
-                ${msg.title || "Love Message"}
-            </b>
-
-            <br><br>
-
-            ${msg.text}
-
-            <span 
-            class="copy"
-            onclick="copyText(this)">
-                copy
-            </span>
-
-        `;
-
-        container.appendChild(div);
-
-    });
-
-}
-
-/* ADD */
-
-function addMsg(){
-
-    let title=
-    document.getElementById("title").value;
-
-    let text=
-    document.getElementById("text").value;
-
-    if(!text.trim()) return;
-
-    let newMsg={
-
-        title:title,
-
-        text:text
-
-    };
-
-    messages.unshift(newMsg);
-
-    /* SAVE */
-
-    localStorage.setItem(
-
-        "loveMessages",
-
-        JSON.stringify(messages)
-
-    );
-
-    /* REFRESH */
-
-    renderMessages();
-
-    /* CLEAR */
-
-    document.getElementById("title").value="";
-
-    document.getElementById("text").value="";
-
-}
-
-/* COPY */
-
-function copyText(el){
-
-    let text=
-    el.parentElement.innerText;
-
-    navigator.clipboard.writeText(text);
+    navigator.clipboard
+    .writeText(text);
 
     alert("Copied ❤");
 
 }
 
+window.copyText=
+copyText;
+
+/* =========================
+   LOAD MESSAGES
+========================= */
+
+async function loadMessages(){
+
+    const { data,error } =
+
+    await supabase
+    .from("messages")
+    .select("*")
+    .order("id",{ ascending:false });
+
+    if(error){
+
+        console.log(error);
+
+        return;
+
+    }
+
+    const messagesDiv=
+    document.getElementById("messages");
+
+    messagesDiv.innerHTML="";
+
+    data.forEach((msg)=>{
+
+        let div=
+        document.createElement("div");
+
+        div.className="msg";
+
+        div.innerHTML=`
+
+        <b>
+
+        ${msg.title || "Love Message"}
+
+        </b>
+
+        <br><br>
+
+        ${msg.text}
+
+        <span
+        class="copy"
+
+        onclick='copyText(
+        ${JSON.stringify(msg.text)}
+        )'>
+
+        copy
+
+        </span>
+
+        `;
+
+        messagesDiv.appendChild(div);
+
+    });
+
+}
+
+/* =========================
+   ADD MESSAGE
+========================= */
+
+async function addMsg(){
+
+    let title=
+    document
+    .getElementById("title")
+    .value;
+
+    let text=
+    document
+    .getElementById("text")
+    .value;
+
+    if(!text.trim()) return;
+
+    await supabase
+    .from("messages")
+    .insert([
+
+        {
+
+            title:title,
+
+            text:text
+
+        }
+
+    ]);
+
+    document
+    .getElementById("title")
+    .value="";
+
+    document
+    .getElementById("text")
+    .value="";
+
+    loadMessages();
+
+}
+
+window.addMsg=
+addMsg;
+
+/* =========================
+   AUTO REFRESH
+========================= */
+
+setInterval(()=>{
+
+    loadMessages();
+
+},2000);
+
 /* LOAD */
 
-renderMessages();
+loadMessages();
 
 </script>
 
