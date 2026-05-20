@@ -1,7 +1,17 @@
-<!DOCTYPE html>  <html lang="en">    <head>    
-<meta charset="UTF-8">    
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    
-<title>Love Vision Pro+ 💖</title>  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">  <style>    *{
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Love Vision Pro+ 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -12,20 +22,22 @@ font-family:'Poppins',sans-serif;
 min-height:100vh;
 overflow-x:hidden;
 display:flex;
-justify-content:flex-start;
-align-items:center;
 flex-direction:column;
+align-items:center;
 color:white;
+
 background:
 radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
-padding-bottom:50px;
+
+padding-bottom:80px;
+transition:.4s;
 }
 
-/* LIGHT MODE */
-
 body.light{
+
 background:
-radial-gradient(circle at top,#ffd1e8,#fff 60%,#f7f7f7);
+radial-gradient(circle at top,#ffd1e8,#fff 60%,#f5f5f5);
+
 color:#111;
 }
 
@@ -35,6 +47,7 @@ color:#111;
 position:fixed;
 inset:0;
 z-index:0;
+overflow:hidden;
 }
 
 .bg span{
@@ -49,164 +62,174 @@ opacity:.7;
 
 @keyframes float{
 
-from{    
-    transform:translateY(100vh);    
-}    
+from{
+transform:translateY(100vh);
+}
 
-to{    
-    transform:translateY(-100vh);    
+to{
+transform:translateY(-100vh);
 }
 
 }
 
-/* BUTTONS */
+/* TOP BAR */
 
 .top-bar{
 
-position:fixed;    
-top:15px;    
-right:15px;    
-z-index:20;    
-display:flex;    
+position:fixed;
+top:15px;
+right:15px;
+
+display:flex;
 gap:10px;
 
+z-index:20;
 }
 
 button{
 
-padding:10px 15px;    
-border:none;    
-border-radius:15px;    
-cursor:pointer;    
-font-weight:600;    
+padding:12px 18px;
+border:none;
+border-radius:15px;
+cursor:pointer;
 
-background:    
-linear-gradient(45deg,#ff006e,#8338ec);    
+font-weight:600;
 
-color:white;    
-transition:.3s;    
+background:
+linear-gradient(45deg,#ff006e,#8338ec);
 
-box-shadow:    
+color:white;
+
+transition:.3s;
+
+box-shadow:
 0 0 20px rgba(255,0,110,.4);
-
 }
 
 button:hover{
-
 transform:scale(1.05);
-
 }
 
-/* MAIN */
+/* CONTAINER */
 
 .container{
 
-position:relative;    
-z-index:5;    
-display:flex;    
-gap:60px;    
-flex-wrap:wrap;    
-justify-content:center;    
-align-items:center;    
-margin-top:120px;    
-width:100%;
+position:relative;
+z-index:5;
 
+display:flex;
+gap:60px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+align-items:center;
+
+margin-top:120px;
+width:100%;
 }
 
 /* CARD */
 
 .card{
 
-width:320px;    
-height:430px;    
-border-radius:30px;    
+width:320px;
+height:430px;
 
-background:    
-rgba(255,255,255,0.06);    
+border-radius:30px;
 
-backdrop-filter:blur(20px);    
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.12),
+rgba(255,255,255,0.03)
+);
 
-border:    
-1px solid rgba(255,255,255,0.15);    
+backdrop-filter:blur(20px);
 
-text-align:center;    
-overflow:hidden;    
-transition:.4s;    
+border:
+1px solid rgba(255,255,255,0.15);
 
-box-shadow:    
+overflow:hidden;
+
+text-align:center;
+
+transition:.4s;
+
+box-shadow:
 0 0 30px rgba(255,0,110,.15);
-
 }
 
 .card:hover{
 
-transform:translateY(-10px) scale(1.02);    
+transform:
+translateY(-10px)
+scale(1.02);
 
-box-shadow:    
+box-shadow:
 0 0 40px rgba(255,0,110,.4);
-
 }
 
 .header{
 
-height:150px;    
+height:150px;
 
-background:    
+background:
 linear-gradient(135deg,#ff006e,#8338ec);
-
 }
 
 .card img{
 
-width:150px;    
-height:150px;    
-border-radius:50%;    
-object-fit:cover;    
-margin-top:-75px;    
+width:150px;
+height:150px;
 
-border:    
-5px solid rgba(255,255,255,.3);    
+object-fit:cover;
 
-cursor:pointer;    
+border-radius:50%;
+
+margin-top:-75px;
+
+border:
+5px solid rgba(255,255,255,.3);
+
+cursor:pointer;
+
 transition:.4s;
-
 }
 
 .card img:hover{
-
 transform:scale(1.07);
-
 }
 
 .card h2{
 
-margin-top:15px;    
+margin-top:15px;
 font-size:28px;
-
 }
 
 .card p{
 
-font-size:14px;    
-opacity:.85;    
-margin-top:10px;    
-padding:0 15px;
+font-size:14px;
+opacity:.85;
 
+margin-top:10px;
+padding:0 15px;
 }
 
 .badge{
 
-display:inline-block;    
-margin-top:15px;    
-padding:10px 20px;    
-border-radius:30px;    
+display:inline-block;
 
-background:    
-linear-gradient(45deg,#ff006e,#ff4da6);    
+margin-top:15px;
+padding:10px 20px;
 
-box-shadow:    
+border-radius:30px;
+
+background:
+linear-gradient(45deg,#ff006e,#ff4da6);
+
+box-shadow:
 0 0 20px rgba(255,0,110,.5);
-
 }
 
 /* CENTER */
@@ -217,329 +240,437 @@ text-align:center;
 
 .center .heart{
 
-font-size:130px;    
-animation:pulse 1.5s infinite;    
+font-size:130px;
 
-text-shadow:    
-0 0 40px #ff2d75;    
+animation:pulse 1.5s infinite;
 
-cursor:pointer;    
+text-shadow:
+0 0 40px #ff2d75;
+
+cursor:pointer;
 user-select:none;
-
 }
 
 @keyframes pulse{
 
-0%{    
-    transform:scale(1);    
-}    
+0%{
+transform:scale(1);
+}
 
-50%{    
-    transform:scale(1.25);    
-}    
+50%{
+transform:scale(1.25);
+}
 
-100%{    
-    transform:scale(1);    
+100%{
+transform:scale(1);
 }
 
 }
 
 .center h1{
 
-font-family:'Great Vibes',cursive;    
-font-size:60px;    
-color:#ff9ad5;    
+font-family:'Great Vibes',cursive;
+font-size:65px;
 
-text-shadow:    
+color:#ff9ad5;
+
+text-shadow:
 0 0 20px rgba(255,0,110,.5);
-
 }
 
-/* MODAL */
-
-.modal{
-
-position:fixed;    
-inset:0;    
-
-background:    
-rgba(0,0,0,.9);    
-
-display:none;    
-justify-content:center;    
-align-items:center;    
-z-index:50;
-
-}
-
-.modal img{
-
-width:80%;    
-max-width:420px;    
-border-radius:20px;    
-
-box-shadow:    
-0 0 40px rgba(255,255,255,.3);
-
-}
-
-/* HEART EFFECT */
-
-.heart-float{
-
-position:absolute;    
-font-size:20px;    
-animation:up 1s linear forwards;    
-pointer-events:none;
-
-}
-
-@keyframes up{
-
-from{    
-
-    transform:translateY(0);    
-    opacity:1;    
-
-}    
-
-to{    
-
-    transform:translateY(-120px);    
-    opacity:0;    
-
-}
-
-}
-
-/* LOVE MESSAGES */
+/* SECTION */
 
 .section{
 
-width:90%;    
-max-width:900px;    
-margin-top:60px;    
-position:relative;    
-z-index:5;    
-text-align:center;
+width:90%;
+max-width:900px;
 
+margin-top:60px;
+
+position:relative;
+z-index:5;
 }
 
 .section h2{
 
-margin-bottom:20px;    
-font-size:35px;
+text-align:center;
+margin-bottom:20px;
 
+font-size:35px;
 }
+
+/* BOX */
 
 .box{
 
-background:    
-rgba(255,255,255,0.06);    
+background:
+rgba(255,255,255,0.06);
 
-backdrop-filter:blur(15px);    
+backdrop-filter:blur(15px);
 
-padding:20px;    
-border-radius:25px;    
+padding:20px;
 
-border:    
+border-radius:25px;
+
+border:
 1px solid rgba(255,255,255,.1);
-
 }
 
 input,
 textarea{
 
-width:100%;    
-padding:15px;    
-margin-top:10px;    
-border:none;    
-border-radius:15px;    
+width:100%;
 
-background:    
-rgba(255,255,255,0.1);    
+padding:15px;
 
-color:white;    
-outline:none;    
+margin-top:10px;
+
+border:none;
+outline:none;
+
+border-radius:15px;
+
 font-size:15px;
 
+background:
+rgba(255,255,255,.1);
+
+color:white;
 }
 
 body.light input,
 body.light textarea{
 
-color:#111;    
-
-background:    
+background:
 rgba(0,0,0,.05);
 
+color:#111;
 }
 
 textarea{
 
-height:100px;    
+height:110px;
 resize:none;
-
 }
+
+/* MESSAGES */
 
 .msg{
 
-margin-top:20px;    
-padding:20px;    
-border-radius:20px;    
+margin-top:20px;
 
-background:    
-rgba(255,255,255,0.08);    
+padding:20px;
 
-border-left:    
-4px solid #ff006e;    
+border-radius:20px;
 
-text-align:left;    
-position:relative;    
+background:
+rgba(255,255,255,0.08);
 
-animation:show .4s ease;
+border-left:
+4px solid #ff006e;
 
+position:relative;
+
+animation:pop .5s ease;
 }
 
-@keyframes show{
+@keyframes pop{
 
-from{    
+0%{
+opacity:0;
+transform:scale(.8);
+}
 
-    opacity:0;    
-    transform:translateY(20px);    
-
-}    
-
-to{    
-
-    opacity:1;    
-    transform:translateY(0);    
-
+100%{
+opacity:1;
+transform:scale(1);
 }
 
 }
 
 .copy{
 
-position:absolute;    
-right:15px;    
-top:15px;    
-font-size:12px;    
-cursor:pointer;    
-opacity:.7;
+position:absolute;
+top:15px;
+right:15px;
 
+font-size:12px;
+
+cursor:pointer;
+opacity:.7;
 }
 
 .copy:hover{
-
 opacity:1;
+}
 
+.date{
+
+margin-top:15px;
+font-size:12px;
+opacity:.6;
+}
+
+.like-btn{
+
+margin-top:15px;
+padding:8px 14px;
+
+font-size:14px;
+}
+
+/* MODAL */
+
+.modal{
+
+position:fixed;
+inset:0;
+
+background:
+rgba(0,0,0,.9);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:50;
+}
+
+.modal img{
+
+width:80%;
+max-width:420px;
+
+border-radius:20px;
+
+box-shadow:
+0 0 40px rgba(255,255,255,.3);
+}
+
+/* HEART FLOAT */
+
+.heart-float{
+
+position:absolute;
+
+font-size:20px;
+
+animation:up 1s linear forwards;
+
+pointer-events:none;
+}
+
+@keyframes up{
+
+from{
+transform:translateY(0);
+opacity:1;
+}
+
+to{
+transform:translateY(-120px);
+opacity:0;
+}
+
+}
+
+/* LOADER */
+
+#loader{
+
+display:none;
+
+margin-top:20px;
+text-align:center;
+
+opacity:.7;
+}
+
+/* VISITORS */
+
+.visitors{
+
+position:fixed;
+
+left:15px;
+top:15px;
+
+z-index:20;
+
+padding:10px 15px;
+
+border-radius:15px;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(10px);
 }
 
 /* MOBILE */
 
 @media(max-width:900px){
 
-.container{    
+.container{
+flex-direction:column;
+gap:30px;
+}
 
-    flex-direction:column;    
-    gap:30px;    
+.center .heart{
+font-size:100px;
+}
 
-}    
-
-.center .heart{    
-
-    font-size:100px;    
-
-}    
-
-.center h1{    
-
-    font-size:50px;    
-
+.center h1{
+font-size:50px;
 }
 
 }
 
-</style>  </head>  <body>  <!-- TOP BUTTONS -->  <div class="top-bar">  <button onclick="toggleMode()">
+</style>
+</head>
+
+<body>
+
+<div class="bg" id="bg"></div>
+
+<div class="visitors" id="visitorCount">
+👀 Loading...
+</div>
+
+<div class="top-bar">
+
+<button onclick="toggleMode()">
 🌗 Mode
 </button>
 
-<button onclick="toggleMusic()">    
-    🎵 Music    
-</button>  </div>  <!-- BACKGROUND -->  <div class="bg" id="bg"></div>  <!-- MAIN -->  <div class="container">  <!-- YOU -->    <div class="card">    <div class="header"></div>    
-
-<img    
-src="https://files.catbox.moe/f7x9f6.jpg"    
-onclick="openImg(this.src)">    
-
-<h2>Rayen</h2>    
-
-<p>    
-    My heart sees only one direction:    
-    love.    
-</p>    
-
-<div class="badge">    
-    Forever Mine ❤    
-</div>
-
-</div>    <!-- CENTER -->    <div class="center">    <div class="heart"    
-onclick="heartClick(event)">    
-    ❤    
-</div>    
-
-<h1>Alma</h1>    
-
-<p>    
-    Two Hearts • One Vision    
-</p>
-
-</div>    <!-- HER -->    <div class="card">    <div class="header"></div>    
-
-<img    
-src="https://files.catbox.moe/xvqhco.jpg"    
-onclick="openImg(this.src)">    
-
-<h2>Alma</h2>    
-
-<p>    
-    The light that makes my world visible.    
-</p>    
-
-<div class="badge">    
-    Soul Mate ✨    
-</div>
-
-</div>  </div>  <!-- LOVE MESSAGES -->  <div class="section">  <h2>💌 Love Messages</h2>    <div class="box">    <input    
-id="title"    
-placeholder="Message title...">    
-
-<textarea    
-id="text"    
-placeholder="Write your love message here..."></textarea>    
-
-<button onclick="addMsg()">    
-    Add ❤️    
+<button onclick="toggleMusic()">
+🎵 Music
 </button>
 
-</div>    <div id="messages"></div>  </div>  <!-- MODAL -->  <div    
-class="modal"    
-id="modal"    
-onclick="closeImg()">  <img id="modalImg">  </div>  <!-- SCRIPT -->  <script type="module">    /* =========================
-SUPABASE
-========================= */
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<div class="header"></div>
+
+<img
+src="https://files.catbox.moe/f7x9f6.jpg"
+onclick="openImg(this.src)"
+>
+
+<h2>Rayen</h2>
+
+<p>
+My heart sees only one direction:
+love.
+</p>
+
+<div class="badge">
+Forever Mine ❤
+</div>
+
+</div>
+
+<div class="center">
+
+<div
+class="heart"
+onclick="heartClick(event)"
+>
+❤
+</div>
+
+<h1>Alma</h1>
+
+<p>
+Two Hearts • One Vision
+</p>
+
+</div>
+
+<div class="card">
+
+<div class="header"></div>
+
+<img
+src="https://files.catbox.moe/xvqhco.jpg"
+onclick="openImg(this.src)"
+>
+
+<h2>Alma</h2>
+
+<p>
+The light that makes my world visible.
+</p>
+
+<div class="badge">
+Soul Mate ✨
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>
+💌 Love Messages
+</h2>
+
+<div class="box">
+
+<input
+id="title"
+placeholder="Message title..."
+>
+
+<textarea
+id="text"
+placeholder="Write your love message here..."
+></textarea>
+
+<button onclick="addMsg(event)">
+Add ❤️
+</button>
+
+</div>
+
+<div id="loader">
+Loading...
+</div>
+
+<div id="messages"></div>
+
+</div>
+
+<div
+class="modal"
+id="modal"
+onclick="closeImg()"
+>
+
+<img id="modalImg">
+
+</div>
+
+<script type="module">
 
 import { createClient }
-
 from
 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+/* =========================
+SUPABASE
+========================= */
 
 const supabaseUrl =
 "https://vjsphepnycchogektxcq.supabase.co";
 
 const supabaseKey =
-"sb_publishable_TzMnSWGJWmQF190_x9Fxfg_2tbr1gnX";
+"YOUR_SUPABASE_KEY";
 
 const supabase =
 createClient(
@@ -556,29 +687,51 @@ document.getElementById("bg");
 
 for(let i=0;i<120;i++){
 
-let s=    
-document.createElement("span");    
+let s=
+document.createElement("span");
 
-s.style.left=    
-Math.random()*100+"%";    
+s.style.left=
+Math.random()*100+"%";
 
-s.style.animationDuration=    
-(Math.random()*8+4)+"s";    
+s.style.animationDuration=
+(Math.random()*8+4)+"s";
 
-s.style.opacity=    
-Math.random();    
+s.style.opacity=
+Math.random();
 
 bg.appendChild(s);
 
 }
 
 /* =========================
-MODE
+THEME
 ========================= */
 
 function toggleMode(){
 
-document.body.classList.toggle("light");
+document.body
+.classList.toggle("light");
+
+localStorage.setItem(
+"theme",
+
+document.body.classList
+.contains("light")
+
+? "light"
+
+: "dark"
+);
+
+}
+
+if(
+localStorage.getItem("theme")
+==="light"
+){
+
+document.body
+.classList.add("light");
 
 }
 
@@ -589,7 +742,8 @@ toggleMode;
 MUSIC
 ========================= */
 
-let music=new Audio(
+let music=
+new Audio(
 "https://files.catbox.moe/lhfn3i.mp3"
 );
 
@@ -599,9 +753,11 @@ let play=false;
 
 function toggleMusic(){
 
-play=!play;    
+play=!play;
 
-play ? music.play() : music.pause();
+play
+? music.play()
+: music.pause();
 
 }
 
@@ -614,24 +770,29 @@ IMAGE VIEW
 
 function openImg(src){
 
-document.getElementById("modal")    
-.style.display="flex";    
+document
+.getElementById("modal")
+.style.display="flex";
 
-document.getElementById("modalImg")    
+document
+.getElementById("modalImg")
 .src=src;
 
 }
 
-window.openImg=openImg;
+window.openImg=
+openImg;
 
 function closeImg(){
 
-document.getElementById("modal")    
+document
+.getElementById("modal")
 .style.display="none";
 
 }
 
-window.closeImg=closeImg;
+window.closeImg=
+closeImg;
 
 /* =========================
 HEART EFFECT
@@ -639,25 +800,26 @@ HEART EFFECT
 
 function heartClick(e){
 
-let h=    
-document.createElement("div");    
+let h=
+document.createElement("div");
 
-h.className=    
-"heart-float";    
+h.className=
+"heart-float";
 
-h.innerHTML="❤";    
+h.innerHTML="❤";
 
-h.style.left=    
-e.clientX+"px";    
+h.style.left=
+e.clientX+"px";
 
-h.style.top=    
-e.clientY+"px";    
+h.style.top=
+e.clientY+"px";
 
-document.body.appendChild(h);    
+document.body
+.appendChild(h);
 
-setTimeout(()=>{    
+setTimeout(()=>{
 
-    h.remove();    
+h.remove();
 
 },1000);
 
@@ -672,8 +834,8 @@ COPY
 
 function copyText(text){
 
-navigator.clipboard    
-.writeText(text);    
+navigator.clipboard
+.writeText(text);
 
 alert("Copied ❤");
 
@@ -686,63 +848,96 @@ copyText;
 LOAD MESSAGES
 ========================= */
 
+const loader=
+document.getElementById("loader");
+
 async function loadMessages(){
 
-const { data,error } =    
+loader.style.display=
+"block";
 
-await supabase    
-.from("messages")    
-.select("*")    
-.order("id",{ ascending:false });    
+const { data,error } =
+await supabase
+.from("messages")
+.select("*")
+.order("id",{
+ascending:false
+});
 
-if(error){    
+loader.style.display=
+"none";
 
-    console.log(error);    
+if(error){
 
-    return;    
+console.log(error);
 
-}    
+return;
 
-const messagesDiv=    
-document.getElementById("messages");    
+}
 
-messagesDiv.innerHTML="";    
+const messagesDiv=
+document.getElementById("messages");
 
-data.forEach((msg)=>{    
+const fragment=
+document.createDocumentFragment();
 
-    let div=    
-    document.createElement("div");    
+messagesDiv.innerHTML="";
 
-    div.className="msg";    
+data.forEach((msg)=>{
 
-    div.innerHTML=`    
+let div=
+document.createElement("div");
 
-    <b>    
+div.className=
+"msg";
 
-    ${msg.title || "Love Message"}    
+div.innerHTML=
+`
+<b>
+${msg.title || "Love Message"}
+</b>
 
-    </b>    
+<br><br>
 
-    <br><br>    
+${msg.text}
 
-    ${msg.text}    
+<span
+class="copy"
 
-    <span    
-    class="copy"    
+onclick='copyText(
+${JSON.stringify(msg.text)}
+)'
+>
+copy
+</span>
 
-    onclick='copyText(    
-    ${JSON.stringify(msg.text)}    
-    )'>    
+<br>
 
-    copy    
+<button
+class="like-btn"
 
-    </span>    
+onclick="likeMsg(${msg.id})"
+>
 
-    `;    
+❤️ ${msg.likes || 0}
 
-    messagesDiv.appendChild(div);    
+</button>
+
+<div class="date">
+
+${new Date(
+msg.created_at
+).toLocaleString()}
+
+</div>
+`;
+
+fragment.appendChild(div);
 
 });
+
+messagesDiv
+.appendChild(fragment);
 
 }
 
@@ -750,63 +945,200 @@ data.forEach((msg)=>{
 ADD MESSAGE
 ========================= */
 
-async function addMsg(){
+let sending=false;
 
-let title=    
-document    
-.getElementById("title")    
-.value;    
+async function addMsg(event){
 
-let text=    
-document    
-.getElementById("text")    
-.value;    
+if(sending) return;
 
-if(!text.trim()) return;    
+let title=
+document
+.getElementById("title")
+.value
+.trim();
 
-await supabase    
-.from("messages")    
-.insert([    
+let text=
+document
+.getElementById("text")
+.value
+.trim();
 
-    {    
+if(!text) return;
 
-        title:title,    
+sending=true;
 
-        text:text    
+const btn=
+event.target;
 
-    }    
+btn.innerHTML=
+"Sending...";
 
-]);    
+/* CHECK DUPLICATE */
 
-document    
-.getElementById("title")    
-.value="";    
+const { data } =
+await supabase
+.from("messages")
+.select("*")
+.eq("text",text);
 
-document    
-.getElementById("text")    
-.value="";    
+if(data.length){
+
+alert(
+"Message already exists ❤"
+);
+
+btn.innerHTML=
+"Add ❤️";
+
+sending=false;
+
+return;
+
+}
+
+/* INSERT */
+
+await supabase
+.from("messages")
+.insert([
+
+{
+title:
+title || "Love Message",
+
+text:text,
+
+likes:0
+}
+
+]);
+
+document
+.getElementById("title")
+.value="";
+
+document
+.getElementById("text")
+.value="";
+
+btn.innerHTML=
+"Add ❤️";
+
+sending=false;
+
+}
+
+/* =========================
+LIKE
+========================= */
+
+async function likeMsg(id){
+
+const { data } =
+await supabase
+.from("messages")
+.select("likes")
+.eq("id",id)
+.single();
+
+await supabase
+.from("messages")
+.update({
+
+likes:
+(data.likes || 0)+1
+
+})
+.eq("id",id);
+
+}
+
+window.likeMsg=
+likeMsg;
+
+/* =========================
+REALTIME
+========================= */
+
+supabase
+.channel('messages-channel')
+
+.on(
+'postgres_changes',
+
+{
+event:'*',
+schema:'public',
+table:'messages'
+},
+
+(payload)=>{
 
 loadMessages();
 
 }
 
-window.addMsg=
-addMsg;
+)
+
+.subscribe();
 
 /* =========================
-AUTO REFRESH
+VISITORS
 ========================= */
 
-setInterval(()=>{
+async function updateVisitors(){
+
+let count=
+localStorage.getItem(
+"visited"
+);
+
+if(!count){
+
+localStorage.setItem(
+"visited",
+"true"
+);
+
+const { data } =
+await supabase
+.from("visitors")
+.select("*");
+
+document
+.getElementById("visitorCount")
+.innerHTML=
+
+"👀 Visitors: "+
+data.length;
+
+}else{
+
+const { data } =
+await supabase
+.from("visitors")
+.select("*");
+
+document
+.getElementById("visitorCount")
+.innerHTML=
+
+"👀 Visitors: "+
+data.length;
+
+}
+
+}
+
+updateVisitors();
+
+/* =========================
+LOAD
+========================= */
 
 loadMessages();
 
-},2000);
+</script>
 
-/* LOAD */
-
-loadMessages();
-
-</script>  </body>
-
-</html>    
+</body>
+</html>
