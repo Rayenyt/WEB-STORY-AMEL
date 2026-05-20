@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -17,26 +18,39 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
+
 font-family:'Poppins',sans-serif;
+
 min-height:100vh;
+
 overflow-x:hidden;
+
 display:flex;
-flex-direction:column;
+justify-content:flex-start;
 align-items:center;
+flex-direction:column;
+
 color:white;
 
 background:
 radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
 
-padding-bottom:80px;
+padding-bottom:50px;
+
 transition:.4s;
 }
+
+/* LIGHT MODE */
 
 body.light{
 
 background:
-radial-gradient(circle at top,#ffd1e8,#fff 60%,#f5f5f5);
+radial-gradient(circle at top,#ffd1e8,#fff 60%,#f7f7f7);
 
 color:#111;
 }
@@ -44,53 +58,69 @@ color:#111;
 /* BACKGROUND */
 
 .bg{
+
 position:fixed;
 inset:0;
+
 z-index:0;
 overflow:hidden;
 }
 
 .bg span{
+
 position:absolute;
+
 width:3px;
 height:3px;
+
 background:white;
+
 border-radius:50%;
+
 animation:float linear infinite;
+
 opacity:.7;
 }
 
 @keyframes float{
 
 from{
+
 transform:translateY(100vh);
+
 }
 
 to{
+
 transform:translateY(-100vh);
-}
 
 }
 
-/* TOP BAR */
+}
+
+/* BUTTONS */
 
 .top-bar{
 
 position:fixed;
+
 top:15px;
 right:15px;
 
+z-index:20;
+
 display:flex;
 gap:10px;
-
-z-index:20;
 }
 
 button{
 
-padding:12px 18px;
+padding:10px 15px;
+
 border:none;
+
 border-radius:15px;
+
 cursor:pointer;
 
 font-weight:600;
@@ -107,17 +137,25 @@ box-shadow:
 }
 
 button:hover{
+
 transform:scale(1.05);
 }
 
-/* CONTAINER */
+button:active{
+
+transform:scale(.95);
+}
+
+/* MAIN */
 
 .container{
 
 position:relative;
+
 z-index:5;
 
 display:flex;
+
 gap:60px;
 
 flex-wrap:wrap;
@@ -126,6 +164,7 @@ justify-content:center;
 align-items:center;
 
 margin-top:120px;
+
 width:100%;
 }
 
@@ -133,31 +172,60 @@ width:100%;
 
 .card{
 
+position:relative;
+
 width:320px;
 height:430px;
 
 border-radius:30px;
 
 background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.12),
-rgba(255,255,255,0.03)
-);
+rgba(255,255,255,0.06);
 
 backdrop-filter:blur(20px);
 
 border:
 1px solid rgba(255,255,255,0.15);
 
-overflow:hidden;
-
 text-align:center;
+
+overflow:hidden;
 
 transition:.4s;
 
 box-shadow:
 0 0 30px rgba(255,0,110,.15);
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:-100%;
+left:-100%;
+
+width:200%;
+height:200%;
+
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.12),
+transparent
+);
+
+transform:rotate(25deg);
+
+transition:.8s;
+}
+
+.card:hover::before{
+
+top:100%;
+left:100%;
 }
 
 .card:hover{
@@ -183,9 +251,9 @@ linear-gradient(135deg,#ff006e,#8338ec);
 width:150px;
 height:150px;
 
-object-fit:cover;
-
 border-radius:50%;
+
+object-fit:cover;
 
 margin-top:-75px;
 
@@ -198,21 +266,25 @@ transition:.4s;
 }
 
 .card img:hover{
+
 transform:scale(1.07);
 }
 
 .card h2{
 
 margin-top:15px;
+
 font-size:28px;
 }
 
 .card p{
 
 font-size:14px;
+
 opacity:.85;
 
 margin-top:10px;
+
 padding:0 15px;
 }
 
@@ -221,6 +293,7 @@ padding:0 15px;
 display:inline-block;
 
 margin-top:15px;
+
 padding:10px 20px;
 
 border-radius:30px;
@@ -248,6 +321,7 @@ text-shadow:
 0 0 40px #ff2d75;
 
 cursor:pointer;
+
 user-select:none;
 }
 
@@ -270,36 +344,213 @@ transform:scale(1);
 .center h1{
 
 font-family:'Great Vibes',cursive;
-font-size:65px;
+
+font-size:60px;
 
 color:#ff9ad5;
 
-text-shadow:
-0 0 20px rgba(255,0,110,.5);
+animation:
+glowText 2s infinite alternate;
 }
 
-/* SECTION */
+@keyframes glowText{
+
+from{
+
+text-shadow:
+0 0 20px rgba(255,0,110,.4);
+
+}
+
+to{
+
+text-shadow:
+0 0 40px rgba(255,0,110,.9);
+
+}
+
+}
+
+/* MODAL */
+
+.modal{
+
+position:fixed;
+
+inset:0;
+
+background:
+rgba(0,0,0,.9);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:50;
+}
+
+.modal img{
+
+width:80%;
+max-width:420px;
+
+border-radius:20px;
+
+box-shadow:
+0 0 40px rgba(255,255,255,.3);
+
+animation:
+zoomIn .3s ease;
+}
+
+@keyframes zoomIn{
+
+from{
+
+transform:scale(.7);
+
+opacity:0;
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+}
+
+}
+
+/* HEART EFFECT */
+
+.heart-float{
+
+position:absolute;
+
+font-size:20px;
+
+animation:up 1s linear forwards;
+
+pointer-events:none;
+}
+
+.hand-float{
+
+position:fixed;
+
+font-size:30px;
+
+pointer-events:none;
+
+animation:handUp 1s linear forwards;
+
+z-index:999;
+}
+
+.particle{
+
+position:fixed;
+
+width:5px;
+height:5px;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.8);
+
+pointer-events:none;
+
+animation:
+particleFloat 2s linear forwards;
+}
+
+@keyframes particleFloat{
+
+0%{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-200px)
+scale(0);
+}
+
+}
+
+@keyframes handUp{
+
+0%{
+
+opacity:1;
+
+transform:
+translateY(0)
+scale(1);
+}
+
+100%{
+
+opacity:0;
+
+transform:
+translateY(-140px)
+scale(1.5);
+}
+
+}
+
+@keyframes up{
+
+from{
+
+transform:translateY(0);
+
+opacity:1;
+}
+
+to{
+
+transform:translateY(-120px);
+
+opacity:0;
+}
+
+}
+
+/* LOVE MESSAGES */
 
 .section{
 
 width:90%;
+
 max-width:900px;
 
 margin-top:60px;
 
 position:relative;
+
 z-index:5;
+
+text-align:center;
 }
 
 .section h2{
 
-text-align:center;
 margin-bottom:20px;
 
 font-size:35px;
 }
-
-/* BOX */
 
 .box{
 
@@ -326,34 +577,43 @@ padding:15px;
 margin-top:10px;
 
 border:none;
-outline:none;
 
 border-radius:15px;
 
-font-size:15px;
-
 background:
-rgba(255,255,255,.1);
+rgba(255,255,255,0.1);
 
 color:white;
+
+outline:none;
+
+font-size:15px;
+
+transition:.3s;
+}
+
+input:focus,
+textarea:focus{
+
+box-shadow:
+0 0 20px rgba(255,0,110,.35);
 }
 
 body.light input,
 body.light textarea{
 
+color:#111;
+
 background:
 rgba(0,0,0,.05);
-
-color:#111;
 }
 
 textarea{
 
-height:110px;
+height:100px;
+
 resize:none;
 }
-
-/* MESSAGES */
 
 .msg{
 
@@ -369,21 +629,43 @@ rgba(255,255,255,0.08);
 border-left:
 4px solid #ff006e;
 
+text-align:left;
+
 position:relative;
 
-animation:pop .5s ease;
+animation:show .4s ease;
+
+will-change:transform;
+
+transition:.3s;
+
+transform-origin:center;
 }
 
-@keyframes pop{
+.msg:hover{
 
-0%{
+transform:
+translateY(-5px)
+scale(1.01);
+
+box-shadow:
+0 0 25px rgba(255,0,110,.25);
+}
+
+@keyframes show{
+
+from{
+
 opacity:0;
-transform:scale(.8);
+
+transform:translateY(20px);
 }
 
-100%{
+to{
+
 opacity:1;
-transform:scale(1);
+
+transform:translateY(0);
 }
 
 }
@@ -391,121 +673,20 @@ transform:scale(1);
 .copy{
 
 position:absolute;
-top:15px;
+
 right:15px;
+top:15px;
 
 font-size:12px;
 
 cursor:pointer;
+
 opacity:.7;
 }
 
 .copy:hover{
+
 opacity:1;
-}
-
-.date{
-
-margin-top:15px;
-font-size:12px;
-opacity:.6;
-}
-
-.like-btn{
-
-margin-top:15px;
-padding:8px 14px;
-
-font-size:14px;
-}
-
-/* MODAL */
-
-.modal{
-
-position:fixed;
-inset:0;
-
-background:
-rgba(0,0,0,.9);
-
-display:none;
-
-justify-content:center;
-align-items:center;
-
-z-index:50;
-}
-
-.modal img{
-
-width:80%;
-max-width:420px;
-
-border-radius:20px;
-
-box-shadow:
-0 0 40px rgba(255,255,255,.3);
-}
-
-/* HEART FLOAT */
-
-.heart-float{
-
-position:absolute;
-
-font-size:20px;
-
-animation:up 1s linear forwards;
-
-pointer-events:none;
-}
-
-@keyframes up{
-
-from{
-transform:translateY(0);
-opacity:1;
-}
-
-to{
-transform:translateY(-120px);
-opacity:0;
-}
-
-}
-
-/* LOADER */
-
-#loader{
-
-display:none;
-
-margin-top:20px;
-text-align:center;
-
-opacity:.7;
-}
-
-/* VISITORS */
-
-.visitors{
-
-position:fixed;
-
-left:15px;
-top:15px;
-
-z-index:20;
-
-padding:10px 15px;
-
-border-radius:15px;
-
-background:
-rgba(255,255,255,.08);
-
-backdrop-filter:blur(10px);
 }
 
 /* MOBILE */
@@ -513,30 +694,31 @@ backdrop-filter:blur(10px);
 @media(max-width:900px){
 
 .container{
+
 flex-direction:column;
+
 gap:30px;
 }
 
 .center .heart{
+
 font-size:100px;
 }
 
 .center h1{
+
 font-size:50px;
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="bg" id="bg"></div>
-
-<div class="visitors" id="visitorCount">
-👀 Loading...
-</div>
+<!-- TOP BUTTONS -->
 
 <div class="top-bar">
 
@@ -550,7 +732,15 @@ font-size:50px;
 
 </div>
 
+<!-- BACKGROUND -->
+
+<div class="bg" id="bg"></div>
+
+<!-- MAIN -->
+
 <div class="container">
+
+<!-- YOU -->
 
 <div class="card">
 
@@ -574,6 +764,8 @@ Forever Mine ❤
 
 </div>
 
+<!-- CENTER -->
+
 <div class="center">
 
 <div
@@ -590,6 +782,8 @@ Two Hearts • One Vision
 </p>
 
 </div>
+
+<!-- HER -->
 
 <div class="card">
 
@@ -614,6 +808,8 @@ Soul Mate ✨
 
 </div>
 
+<!-- LOVE MESSAGES -->
+
 <div class="section">
 
 <h2>
@@ -632,19 +828,17 @@ id="text"
 placeholder="Write your love message here..."
 ></textarea>
 
-<button onclick="addMsg(event)">
+<button onclick="addMsg()">
 Add ❤️
 </button>
 
 </div>
 
-<div id="loader">
-Loading...
-</div>
-
 <div id="messages"></div>
 
 </div>
+
+<!-- MODAL -->
 
 <div
 class="modal"
@@ -658,19 +852,20 @@ onclick="closeImg()"
 
 <script type="module">
 
-import { createClient }
-from
-'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-
 /* =========================
 SUPABASE
 ========================= */
+
+import { createClient }
+
+from
+'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
 
 const supabaseUrl =
 "https://vjsphepnycchogektxcq.supabase.co";
 
 const supabaseKey =
-"YOUR_SUPABASE_KEY";
+"sb_publishable_TzMnSWGJWmQF190_x9Fxfg_2tbr1gnX";
 
 const supabase =
 createClient(
@@ -704,13 +899,12 @@ bg.appendChild(s);
 }
 
 /* =========================
-THEME
+MODE
 ========================= */
 
 function toggleMode(){
 
-document.body
-.classList.toggle("light");
+document.body.classList.toggle("light");
 
 localStorage.setItem(
 "theme",
@@ -800,6 +994,8 @@ HEART EFFECT
 
 function heartClick(e){
 
+/* HEART */
+
 let h=
 document.createElement("div");
 
@@ -817,9 +1013,59 @@ e.clientY+"px";
 document.body
 .appendChild(h);
 
+/* HAND */
+
+let hand=
+document.createElement("div");
+
+hand.className=
+"hand-float";
+
+hand.innerHTML="🫶";
+
+hand.style.left=
+(e.clientX-10)+"px";
+
+hand.style.top=
+(e.clientY-10)+"px";
+
+document.body
+.appendChild(hand);
+
+/* PARTICLES */
+
+for(let i=0;i<8;i++){
+
+let p=
+document.createElement("div");
+
+p.className=
+"particle";
+
+p.style.left=
+e.clientX+"px";
+
+p.style.top=
+e.clientY+"px";
+
+document.body
+.appendChild(p);
+
+setTimeout(()=>{
+
+p.remove();
+
+},2000);
+
+}
+
+/* REMOVE */
+
 setTimeout(()=>{
 
 h.remove();
+
+hand.remove();
 
 },1000);
 
@@ -848,40 +1094,29 @@ copyText;
 LOAD MESSAGES
 ========================= */
 
-const loader=
-document.getElementById("loader");
-
 async function loadMessages(){
 
-loader.style.display=
-"block";
-
 const { data,error } =
+
 await supabase
 .from("messages")
 .select("*")
-.order("id",{
-ascending:false
-});
-
-loader.style.display=
-"none";
+.order("id",{ ascending:false });
 
 if(error){
 
 console.log(error);
 
 return;
-
 }
 
 const messagesDiv=
 document.getElementById("messages");
 
+messagesDiv.innerHTML="";
+
 const fragment=
 document.createDocumentFragment();
-
-messagesDiv.innerHTML="";
 
 data.forEach((msg)=>{
 
@@ -891,10 +1126,12 @@ document.createElement("div");
 div.className=
 "msg";
 
-div.innerHTML=
-`
+div.innerHTML=`
+
 <b>
+
 ${msg.title || "Love Message"}
+
 </b>
 
 <br><br>
@@ -908,28 +1145,11 @@ onclick='copyText(
 ${JSON.stringify(msg.text)}
 )'
 >
+
 copy
+
 </span>
 
-<br>
-
-<button
-class="like-btn"
-
-onclick="likeMsg(${msg.id})"
->
-
-❤️ ${msg.likes || 0}
-
-</button>
-
-<div class="date">
-
-${new Date(
-msg.created_at
-).toLocaleString()}
-
-</div>
 `;
 
 fragment.appendChild(div);
@@ -947,7 +1167,12 @@ ADD MESSAGE
 
 let sending=false;
 
-async function addMsg(event){
+const sendSound =
+new Audio(
+"https://files.catbox.moe/lhfn3i.mp3"
+);
+
+async function addMsg(){
 
 if(sending) return;
 
@@ -967,12 +1192,6 @@ if(!text) return;
 
 sending=true;
 
-const btn=
-event.target;
-
-btn.innerHTML=
-"Sending...";
-
 /* CHECK DUPLICATE */
 
 const { data } =
@@ -987,13 +1206,9 @@ alert(
 "Message already exists ❤"
 );
 
-btn.innerHTML=
-"Add ❤️";
-
 sending=false;
 
 return;
-
 }
 
 /* INSERT */
@@ -1003,15 +1218,16 @@ await supabase
 .insert([
 
 {
-title:
-title || "Love Message",
 
-text:text,
+title:title,
 
-likes:0
+text:text
+
 }
 
 ]);
+
+sendSound.play();
 
 document
 .getElementById("title")
@@ -1021,40 +1237,12 @@ document
 .getElementById("text")
 .value="";
 
-btn.innerHTML=
-"Add ❤️";
-
 sending=false;
 
 }
 
-/* =========================
-LIKE
-========================= */
-
-async function likeMsg(id){
-
-const { data } =
-await supabase
-.from("messages")
-.select("likes")
-.eq("id",id)
-.single();
-
-await supabase
-.from("messages")
-.update({
-
-likes:
-(data.likes || 0)+1
-
-})
-.eq("id",id);
-
-}
-
-window.likeMsg=
-likeMsg;
+window.addMsg=
+addMsg;
 
 /* =========================
 REALTIME
@@ -1067,9 +1255,13 @@ supabase
 'postgres_changes',
 
 {
+
 event:'*',
+
 schema:'public',
+
 table:'messages'
+
 },
 
 (payload)=>{
@@ -1082,59 +1274,7 @@ loadMessages();
 
 .subscribe();
 
-/* =========================
-VISITORS
-========================= */
-
-async function updateVisitors(){
-
-let count=
-localStorage.getItem(
-"visited"
-);
-
-if(!count){
-
-localStorage.setItem(
-"visited",
-"true"
-);
-
-const { data } =
-await supabase
-.from("visitors")
-.select("*");
-
-document
-.getElementById("visitorCount")
-.innerHTML=
-
-"👀 Visitors: "+
-data.length;
-
-}else{
-
-const { data } =
-await supabase
-.from("visitors")
-.select("*");
-
-document
-.getElementById("visitorCount")
-.innerHTML=
-
-"👀 Visitors: "+
-data.length;
-
-}
-
-}
-
-updateVisitors();
-
-/* =========================
-LOAD
-========================= */
+/* LOAD */
 
 loadMessages();
 
