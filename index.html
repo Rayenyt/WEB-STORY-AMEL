@@ -3,11 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Vision Pro+ 💖</title>
+<title>Love Vision Pro+ 💖 | Ultra Edition</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   RESET
+========================= */
 
 *{
     margin:0;
@@ -15,29 +19,32 @@
     box-sizing:border-box;
 }
 
+/* =========================
+   BODY
+========================= */
+
 body{
     font-family:'Poppins',sans-serif;
     min-height:100vh;
     overflow-x:hidden;
     display:flex;
-    justify-content:flex-start;
-    align-items:center;
     flex-direction:column;
+    align-items:center;
     color:white;
-    background:
-    radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
-    padding-bottom:50px;
+    background:radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
+    padding-bottom:80px;
+    transition:.4s;
 }
 
 /* LIGHT MODE */
-
 body.light{
-    background:
-    radial-gradient(circle at top,#ffd1e8,#fff 60%,#f7f7f7);
+    background:radial-gradient(circle at top,#ffd1e8,#fff 60%,#f7f7f7);
     color:#111;
 }
 
-/* BACKGROUND */
+/* =========================
+   BACKGROUND ANIMATION
+========================= */
 
 .bg{
     position:fixed;
@@ -56,417 +63,265 @@ body.light{
 }
 
 @keyframes float{
-
-    from{
-        transform:translateY(100vh);
-    }
-
-    to{
-        transform:translateY(-100vh);
-    }
-
+    from{transform:translateY(100vh);}
+    to{transform:translateY(-100vh);}
 }
 
-/* BUTTONS */
+/* =========================
+   TOP BAR
+========================= */
 
 .top-bar{
-
     position:fixed;
     top:15px;
     right:15px;
-    z-index:20;
+    z-index:100;
     display:flex;
     gap:10px;
-
 }
 
 button{
-
     padding:10px 15px;
     border:none;
     border-radius:15px;
     cursor:pointer;
     font-weight:600;
-
-    background:
-    linear-gradient(45deg,#ff006e,#8338ec);
-
+    background:linear-gradient(45deg,#ff006e,#8338ec);
     color:white;
     transition:.3s;
-
-    box-shadow:
-    0 0 20px rgba(255,0,110,.4);
-
+    box-shadow:0 0 20px rgba(255,0,110,.4);
 }
 
 button:hover{
-
     transform:scale(1.05);
-
 }
 
-/* MAIN */
+/* =========================
+   MAIN LAYOUT
+========================= */
 
 .container{
-
     position:relative;
     z-index:5;
     display:flex;
     gap:60px;
     flex-wrap:wrap;
     justify-content:center;
-    align-items:center;
     margin-top:120px;
-    width:100%;
-
 }
 
-/* CARD */
+/* =========================
+   CARD DESIGN
+========================= */
 
 .card{
-
     width:320px;
     height:430px;
     border-radius:30px;
-
-    background:
-    rgba(255,255,255,0.06);
-
+    background:rgba(255,255,255,0.06);
     backdrop-filter:blur(20px);
-
-    border:
-    1px solid rgba(255,255,255,0.15);
-
+    border:1px solid rgba(255,255,255,0.15);
     text-align:center;
     overflow:hidden;
     transition:.4s;
-
-    box-shadow:
-    0 0 30px rgba(255,0,110,.15);
-
+    box-shadow:0 0 30px rgba(255,0,110,.15);
 }
 
 .card:hover{
-
     transform:translateY(-10px) scale(1.02);
-
-    box-shadow:
-    0 0 40px rgba(255,0,110,.4);
-
-}
-
-.header{
-
-    height:150px;
-
-    background:
-    linear-gradient(135deg,#ff006e,#8338ec);
-
 }
 
 .card img{
-
     width:150px;
     height:150px;
     border-radius:50%;
     object-fit:cover;
     margin-top:-75px;
-
-    border:
-    5px solid rgba(255,255,255,.3);
-
+    border:5px solid rgba(255,255,255,.3);
     cursor:pointer;
+    filter:blur(6px);
     transition:.4s;
-
 }
 
 .card img:hover{
-
+    filter:blur(0px);
     transform:scale(1.07);
-
 }
 
-.card h2{
-
-    margin-top:15px;
-    font-size:28px;
-
-}
-
-.card p{
-
-    font-size:14px;
-    opacity:.85;
-    margin-top:10px;
-    padding:0 15px;
-
-}
-
-.badge{
-
-    display:inline-block;
-    margin-top:15px;
-    padding:10px 20px;
-    border-radius:30px;
-
-    background:
-    linear-gradient(45deg,#ff006e,#ff4da6);
-
-    box-shadow:
-    0 0 20px rgba(255,0,110,.5);
-
-}
-
-/* CENTER */
+/* =========================
+   CENTER HEART
+========================= */
 
 .center{
     text-align:center;
 }
 
 .center .heart{
-
     font-size:130px;
     animation:pulse 1.5s infinite;
-
-    text-shadow:
-    0 0 40px #ff2d75;
-
     cursor:pointer;
-    user-select:none;
-
+    text-shadow:0 0 40px #ff2d75;
 }
 
 @keyframes pulse{
-
-    0%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.25);
-    }
-
-    100%{
-        transform:scale(1);
-    }
-
+    0%{transform:scale(1);}
+    50%{transform:scale(1.25);}
+    100%{transform:scale(1);}
 }
 
 .center h1{
-
     font-family:'Great Vibes',cursive;
     font-size:60px;
     color:#ff9ad5;
-
-    text-shadow:
-    0 0 20px rgba(255,0,110,.5);
-
 }
 
-/* MODAL */
+/* =========================
+   MODAL
+========================= */
 
 .modal{
-
     position:fixed;
     inset:0;
-
-    background:
-    rgba(0,0,0,.9);
-
+    background:rgba(0,0,0,.92);
     display:none;
     justify-content:center;
     align-items:center;
-    z-index:50;
-
+    z-index:999;
 }
 
 .modal img{
-
     width:80%;
-    max-width:420px;
+    max-width:450px;
     border-radius:20px;
-
-    box-shadow:
-    0 0 40px rgba(255,255,255,.3);
-
 }
 
-/* HEART EFFECT */
+/* =========================
+   HEART EFFECT
+========================= */
 
 .heart-float{
-
     position:absolute;
     font-size:20px;
     animation:up 1s linear forwards;
     pointer-events:none;
-
 }
 
 @keyframes up{
-
-    from{
-
-        transform:translateY(0);
-        opacity:1;
-
-    }
-
-    to{
-
-        transform:translateY(-120px);
-        opacity:0;
-
-    }
-
+    from{transform:translateY(0);opacity:1;}
+    to{transform:translateY(-150px);opacity:0;}
 }
 
-/* LOVE MESSAGES */
+/* =========================
+   MESSAGES SYSTEM
+========================= */
 
 .section{
-
     width:90%;
     max-width:900px;
     margin-top:60px;
-    position:relative;
-    z-index:5;
     text-align:center;
-
-}
-
-.section h2{
-
-    margin-bottom:20px;
-    font-size:35px;
-
+    z-index:5;
 }
 
 .box{
-
-    background:
-    rgba(255,255,255,0.06);
-
-    backdrop-filter:blur(15px);
-
+    background:rgba(255,255,255,0.06);
     padding:20px;
-    border-radius:25px;
-
-    border:
-    1px solid rgba(255,255,255,.1);
-
+    border-radius:20px;
+    backdrop-filter:blur(15px);
 }
 
-input,
-textarea{
-
+input,textarea{
     width:100%;
     padding:15px;
     margin-top:10px;
     border:none;
     border-radius:15px;
-
-    background:
-    rgba(255,255,255,0.1);
-
+    background:rgba(255,255,255,0.1);
     color:white;
-    outline:none;
-    font-size:15px;
-
 }
 
-body.light input,
-body.light textarea{
+/* =========================
+   IMAGE GALLERY (NEW BIG SYSTEM)
+========================= */
 
-    color:#111;
-
-    background:
-    rgba(0,0,0,.05);
-
+.images-section{
+    width:90%;
+    max-width:1100px;
+    margin-top:70px;
+    text-align:center;
 }
 
-textarea{
-
-    height:100px;
-    resize:none;
-
+.upload-box{
+    margin-top:20px;
+    padding:20px;
+    background:rgba(255,255,255,0.06);
+    border-radius:20px;
 }
 
-.msg{
+.images-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
+    margin-top:20px;
+}
 
+/* IMAGE CARD */
+.img-box{
+    border-radius:20px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 0 20px rgba(255,0,110,.25);
+}
+
+.img-box:hover{
+    transform:scale(1.05);
+}
+
+.img-box img{
+    width:100%;
+    height:170px;
+    object-fit:cover;
+    filter:blur(10px);
+    transition:.4s;
+}
+
+.img-box:hover img{
+    filter:blur(0px);
+}
+
+/* =========================
+   EXTRA SECTION: LOVE QUOTES
+========================= */
+
+.quotes{
+    margin-top:60px;
+    text-align:center;
+}
+
+.quote-box{
     margin-top:20px;
     padding:20px;
     border-radius:20px;
-
-    background:
-    rgba(255,255,255,0.08);
-
-    border-left:
-    4px solid #ff006e;
-
-    text-align:left;
-    position:relative;
-
-    animation:show .4s ease;
-
+    background:rgba(255,255,255,0.05);
 }
 
-@keyframes show{
+/* =========================
+   SETTINGS PANEL
+========================= */
 
-    from{
-
-        opacity:0;
-        transform:translateY(20px);
-
-    }
-
-    to{
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
-
+.settings{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:999;
 }
 
-.copy{
-
-    position:absolute;
-    right:15px;
-    top:15px;
-    font-size:12px;
-    cursor:pointer;
-    opacity:.7;
-
-}
-
-.copy:hover{
-
-    opacity:1;
-
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-    .container{
-
-        flex-direction:column;
-        gap:30px;
-
-    }
-
-    .center .heart{
-
-        font-size:100px;
-
-    }
-
-    .center h1{
-
-        font-size:50px;
-
-    }
-
+.panel{
+    display:none;
+    padding:15px;
+    background:rgba(0,0,0,0.7);
+    border-radius:15px;
 }
 
 </style>
@@ -474,413 +329,145 @@ textarea{
 
 <body>
 
-<!-- TOP BUTTONS -->
-
+<!-- TOP BAR -->
 <div class="top-bar">
-
-    <button onclick="toggleMode()">
-        🌗 Mode
-    </button>
-
-    <button onclick="toggleMusic()">
-        🎵 Music
-    </button>
-
+<button onclick="toggleMode()">🌗 Mode</button>
+<button onclick="toggleMusic()">🎵 Music</button>
+<button onclick="toggleSettings()">⚙</button>
 </div>
-
-<!-- BACKGROUND -->
 
 <div class="bg" id="bg"></div>
 
 <!-- MAIN -->
-
 <div class="container">
 
-    <!-- YOU -->
+<div class="card">
+<img src="https://files.catbox.moe/gpncs4.jpg" onclick="openImg(this.src)">
+<h2>Rayen</h2>
+<p>My heart sees only one direction: love.</p>
+</div>
 
-    <div class="card">
+<div class="center">
+<div class="heart" onclick="heartClick(event)">❤</div>
+<h1>Alma</h1>
+</div>
 
-        <div class="header"></div>
-
-        <img
-        src="https://files.catbox.moe/gpncs4.jpg"
-        onclick="openImg(this.src)">
-
-        <h2>Rayen</h2>
-
-        <p>
-            My heart sees only one direction:
-            love.
-        </p>
-
-        <div class="badge">
-            Forever Mine ❤
-        </div>
-
-    </div>
-
-    <!-- CENTER -->
-
-    <div class="center">
-
-        <div class="heart"
-        onclick="heartClick(event)">
-            ❤
-        </div>
-
-        <h1>Alma</h1>
-
-        <p>
-            Two Hearts • One Vision
-        </p>
-
-    </div>
-
-    <!-- HER -->
-
-    <div class="card">
-
-        <div class="header"></div>
-
-        <img
-        src="https://files.catbox.moe/kwlmq4.jpg"
-        onclick="openImg(this.src)">
-
-        <h2>Alma</h2>
-
-        <p>
-            The light that makes my world visible.
-        </p>
-
-        <div class="badge">
-            Soul Mate ✨
-        </div>
-
-    </div>
+<div class="card">
+<img src="https://files.catbox.moe/kwlmq4.jpg" onclick="openImg(this.src)">
+<h2>Alma</h2>
+<p>The light that makes my world visible.</p>
+</div>
 
 </div>
 
-<!-- LOVE MESSAGES -->
-
+<!-- MESSAGES -->
 <div class="section">
+<h2>💌 Messages</h2>
 
-    <h2>💌 Love Messages</h2>
+<div class="box">
+<input id="title" placeholder="title">
+<textarea id="text" placeholder="message"></textarea>
+<button onclick="addMsg()">Add</button>
+</div>
 
-    <div class="box">
+<div id="messages"></div>
+</div>
 
-        <input
-        id="title"
-        placeholder="Message title...">
+<!-- IMAGES -->
+<div class="images-section">
+<h2>📸 Hidden Memories</h2>
 
-        <textarea
-        id="text"
-        placeholder="Write your love message here..."></textarea>
+<div class="upload-box">
+<input id="imgUrl" placeholder="image url">
+<button onclick="addImage()">Add Image</button>
+</div>
 
-        <button onclick="addMsg()">
-            Add ❤️
-        </button>
+<div class="images-grid" id="images"></div>
+</div>
 
-    </div>
-
-    <div id="messages"></div>
-
+<!-- QUOTES -->
+<div class="quotes">
+<h2>💖 Love Quotes</h2>
+<div class="quote-box" id="quoteBox">Click for love quote</div>
+<button onclick="newQuote()">New Quote</button>
 </div>
 
 <!-- MODAL -->
-
-<div
-class="modal"
-id="modal"
-onclick="closeImg()">
-
-    <img id="modalImg">
-
+<div class="modal" id="modal" onclick="closeImg()">
+<img id="modalImg">
 </div>
 
-<!-- SCRIPT -->
+<!-- SETTINGS -->
+<div class="settings">
+<div class="panel" id="panel">
+<p>Settings Panel</p>
+</div>
+</div>
 
 <script type="module">
 
-/* =========================
-   SUPABASE
-========================= */
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-import { createClient }
-
-from
-'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-
-const supabaseUrl =
-"https://vjsphepnycchogektxcq.supabase.co";
-
-const supabaseKey =
-"sb_publishable_TzMnSWGJWmQF190_x9Fxfg_2tbr1gnX";
-
-const supabase =
-createClient(
-    supabaseUrl,
-    supabaseKey
+const supabase = createClient(
+"https://vjsphepnycchogektxcq.supabase.co",
+"sb_publishable_TzMnSWGJWmQF190_x9Fxfg_2tbr1gnX"
 );
 
-/* =========================
-   BACKGROUND
-========================= */
-
-const bg=
-document.getElementById("bg");
-
-for(let i=0;i<120;i++){
-
-    let s=
-    document.createElement("span");
-
-    s.style.left=
-    Math.random()*100+"%";
-
-    s.style.animationDuration=
-    (Math.random()*8+4)+"s";
-
-    s.style.opacity=
-    Math.random();
-
-    bg.appendChild(s);
-
+/* BG */
+const bg=document.getElementById("bg");
+for(let i=0;i<200;i++){
+let s=document.createElement("span");
+s.style.left=Math.random()*100+"%";
+s.style.animationDuration=(Math.random()*10+5)+"s";
+bg.appendChild(s);
 }
 
-/* =========================
-   MODE
-========================= */
+/* MODE */
+window.toggleMode=()=>document.body.classList.toggle("light");
 
-function toggleMode(){
-
-    document.body.classList.toggle("light");
-
-}
-
-window.toggleMode=
-toggleMode;
-
-/* =========================
-   MUSIC
-========================= */
-
-let music=new Audio(
-"https://files.catbox.moe/vfkb97.mp3"
-);
-
-music.loop=true;
-
+/* MUSIC */
+let music=new Audio("https://files.catbox.moe/vfkb97.mp3");
 let play=false;
-
-function toggleMusic(){
-
-    play=!play;
-
-    play ? music.play() : music.pause();
-
+window.toggleMusic=()=>{
+play=!play;
+play?music.play():music.pause();
 }
 
-window.toggleMusic=
-toggleMusic;
+/* MODAL */
+window.openImg=(src)=>{
+document.getElementById("modal").style.display="flex";
+document.getElementById("modalImg").src=src;
+}
+window.closeImg=()=>document.getElementById("modal").style.display="none";
 
-/* =========================
-   IMAGE VIEW
-========================= */
-
-function openImg(src){
-
-    document.getElementById("modal")
-    .style.display="flex";
-
-    document.getElementById("modalImg")
-    .src=src;
-
+/* HEART */
+window.heartClick=(e)=>{
+let h=document.createElement("div");
+h.className="heart-float";
+h.innerHTML="❤";
+h.style.left=e.clientX+"px";
+h.style.top=e.clientY+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),1000);
 }
 
-window.openImg=openImg;
-
-function closeImg(){
-
-    document.getElementById("modal")
-    .style.display="none";
-
+/* SETTINGS */
+window.toggleSettings=()=>{
+let p=document.getElementById("panel");
+p.style.display=p.style.display==="block"?"none":"block";
 }
 
-window.closeImg=closeImg;
+/* QUOTES */
+let quotes=[
+"Love is not what you say, it's what you do.",
+"You are my favorite notification.",
+"One heart, two souls.",
+];
 
-/* =========================
-   HEART EFFECT
-========================= */
-
-function heartClick(e){
-
-    let h=
-    document.createElement("div");
-
-    h.className=
-    "heart-float";
-
-    h.innerHTML="❤";
-
-    h.style.left=
-    e.clientX+"px";
-
-    h.style.top=
-    e.clientY+"px";
-
-    document.body.appendChild(h);
-
-    setTimeout(()=>{
-
-        h.remove();
-
-    },1000);
-
+window.newQuote=()=>{
+document.getElementById("quoteBox").innerText=
+quotes[Math.floor(Math.random()*quotes.length)];
 }
-
-window.heartClick=
-heartClick;
-
-/* =========================
-   COPY
-========================= */
-
-function copyText(text){
-
-    navigator.clipboard
-    .writeText(text);
-
-    alert("Copied ❤");
-
-}
-
-window.copyText=
-copyText;
-
-/* =========================
-   LOAD MESSAGES
-========================= */
-
-async function loadMessages(){
-
-    const { data,error } =
-
-    await supabase
-    .from("messages")
-    .select("*")
-    .order("id",{ ascending:false });
-
-    if(error){
-
-        console.log(error);
-
-        return;
-
-    }
-
-    const messagesDiv=
-    document.getElementById("messages");
-
-    messagesDiv.innerHTML="";
-
-    data.forEach((msg)=>{
-
-        let div=
-        document.createElement("div");
-
-        div.className="msg";
-
-        div.innerHTML=`
-
-        <b>
-
-        ${msg.title || "Love Message"}
-
-        </b>
-
-        <br><br>
-
-        ${msg.text}
-
-        <span
-        class="copy"
-
-        onclick='copyText(
-        ${JSON.stringify(msg.text)}
-        )'>
-
-        copy
-
-        </span>
-
-        `;
-
-        messagesDiv.appendChild(div);
-
-    });
-
-}
-
-/* =========================
-   ADD MESSAGE
-========================= */
-
-async function addMsg(){
-
-    let title=
-    document
-    .getElementById("title")
-    .value;
-
-    let text=
-    document
-    .getElementById("text")
-    .value;
-
-    if(!text.trim()) return;
-
-    await supabase
-    .from("messages")
-    .insert([
-
-        {
-
-            title:title,
-
-            text:text
-
-        }
-
-    ]);
-
-    document
-    .getElementById("title")
-    .value="";
-
-    document
-    .getElementById("text")
-    .value="";
-
-    loadMessages();
-
-}
-
-window.addMsg=
-addMsg;
-
-/* =========================
-   AUTO REFRESH
-========================= */
-
-setInterval(()=>{
-
-    loadMessages();
-
-},2000);
-
-/* LOAD */
-
-loadMessages();
 
 </script>
 
