@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Love Vision Pro</title>
+<title>Love Vision Pro+ 💖</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -18,26 +18,26 @@
 body{
     font-family:'Poppins',sans-serif;
     min-height:100vh;
-    overflow:hidden;
+    overflow-x:hidden;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-direction:column;
     color:white;
     background: radial-gradient(circle at top,#ff006e,#0a0015 60%,#000);
-    transition:.5s;
 }
 
 /* LIGHT MODE */
 body.light{
-    background: radial-gradient(circle at top,#ffb3d1,#ffe6f1 60%,#fff);
+    background: radial-gradient(circle at top,#ffd1e8,#fff 60%,#f7f7f7);
     color:#111;
 }
 
 /* BACKGROUND */
 .bg{
-    position:absolute;
+    position:fixed;
     inset:0;
+    z-index:0;
 }
 
 .bg span{
@@ -54,19 +54,24 @@ body.light{
     to{transform:translateY(-100vh);}
 }
 
-/* TOP BUTTON */
-.toggle{
-    position:absolute;
-    top:20px;
-    right:20px;
-    z-index:10;
-    padding:10px 18px;
+/* BUTTONS */
+.top-bar{
+    position:fixed;
+    top:15px;
+    right:15px;
+    z-index:20;
+    display:flex;
+    gap:10px;
+}
+
+button{
+    padding:10px 15px;
     border:none;
-    border-radius:20px;
+    border-radius:15px;
     cursor:pointer;
+    font-weight:600;
     background:linear-gradient(45deg,#ff006e,#8338ec);
     color:white;
-    font-weight:600;
 }
 
 /* MAIN */
@@ -75,9 +80,10 @@ body.light{
     z-index:5;
     display:flex;
     gap:60px;
-    align-items:center;
-    justify-content:center;
     flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    margin-top:80px;
 }
 
 /* CARD */
@@ -91,24 +97,17 @@ body.light{
     text-align:center;
     overflow:hidden;
     transition:.4s;
-    box-shadow:0 0 40px rgba(255,0,120,.2);
-}
-
-body.light .card{
-    background:rgba(255,255,255,0.8);
 }
 
 .card:hover{
     transform:translateY(-10px) scale(1.02);
 }
 
-/* HEADER */
 .header{
     height:150px;
     background:linear-gradient(135deg,#ff006e,#8338ec);
 }
 
-/* IMAGE */
 .card img{
     width:150px;
     height:150px;
@@ -119,7 +118,6 @@ body.light .card{
     cursor:pointer;
 }
 
-/* TEXT */
 .card h2{
     margin-top:15px;
     font-size:28px;
@@ -149,6 +147,7 @@ body.light .card{
     font-size:130px;
     animation:pulse 1.5s infinite;
     text-shadow:0 0 40px #ff2d75;
+    cursor:pointer;
 }
 
 @keyframes pulse{
@@ -163,24 +162,24 @@ body.light .card{
     color:#ff9ad5;
 }
 
-/* IMAGE MODAL */
+/* MODAL */
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,.8);
+    background:rgba(0,0,0,.85);
     display:none;
     justify-content:center;
     align-items:center;
-    z-index:20;
+    z-index:50;
 }
 
 .modal img{
     width:80%;
-    max-width:400px;
+    max-width:420px;
     border-radius:20px;
 }
 
-/* HEARTS CLICK */
+/* HEART EFFECT */
 .heart-float{
     position:absolute;
     font-size:20px;
@@ -189,15 +188,70 @@ body.light .card{
 
 @keyframes up{
     from{transform:translateY(0);opacity:1;}
-    to{transform:translateY(-100px);opacity:0;}
+    to{transform:translateY(-120px);opacity:0;}
 }
+
+/* MESSAGES */
+.section{
+    width:90%;
+    max-width:900px;
+    margin-top:60px;
+    text-align:center;
+}
+
+.box{
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(15px);
+    padding:20px;
+    border-radius:25px;
+}
+
+input,textarea{
+    width:100%;
+    padding:15px;
+    margin-top:10px;
+    border:none;
+    border-radius:15px;
+    background:rgba(255,255,255,0.1);
+    color:white;
+    outline:none;
+}
+
+textarea{
+    height:90px;
+    resize:none;
+}
+
+.msg{
+    margin-top:15px;
+    padding:15px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    border-left:4px solid #ff006e;
+    text-align:left;
+    position:relative;
+}
+
+.copy{
+    position:absolute;
+    right:10px;
+    top:10px;
+    font-size:12px;
+    cursor:pointer;
+    opacity:.7;
+}
+
+.copy:hover{opacity:1;}
 
 </style>
 </head>
 
 <body>
 
-<button class="toggle" onclick="toggleMode()">Toggle Mode 🌗</button>
+<div class="top-bar">
+    <button onclick="toggleMode()">🌗 Mode</button>
+    <button onclick="toggleMusic()">🎵 Music</button>
+</div>
 
 <div class="bg" id="bg"></div>
 
@@ -230,6 +284,21 @@ body.light .card{
 
 </div>
 
+<!-- LOVE MESSAGES -->
+<div class="section">
+
+    <h2>💌 Love Messages</h2>
+
+    <div class="box">
+        <input id="title" placeholder="Title">
+        <textarea id="text" placeholder="Write love message..."></textarea>
+        <button onclick="addMsg()">Add ❤</button>
+    </div>
+
+    <div id="messages"></div>
+
+</div>
+
 <!-- MODAL -->
 <div class="modal" id="modal" onclick="closeImg()">
     <img id="modalImg">
@@ -237,7 +306,7 @@ body.light .card{
 
 <script>
 
-/* STARS */
+/* BG */
 const bg=document.getElementById("bg");
 
 for(let i=0;i<120;i++){
@@ -252,7 +321,17 @@ function toggleMode(){
     document.body.classList.toggle("light");
 }
 
-/* IMAGE ZOOM */
+/* MUSIC */
+let music=new Audio("https://files.catbox.moe/vfkb97.mp3");
+music.loop=true;
+let play=false;
+
+function toggleMusic(){
+    play=!play;
+    play ? music.play() : music.pause();
+}
+
+/* IMAGE */
 function openImg(src){
     document.getElementById("modal").style.display="flex";
     document.getElementById("modalImg").src=src;
@@ -262,7 +341,7 @@ function closeImg(){
     document.getElementById("modal").style.display="none";
 }
 
-/* HEART CLICK EFFECT */
+/* HEART */
 function heartClick(e){
     let h=document.createElement("div");
     h.className="heart-float";
@@ -270,8 +349,32 @@ function heartClick(e){
     h.style.left=e.clientX+"px";
     h.style.top=e.clientY+"px";
     document.body.appendChild(h);
-
     setTimeout(()=>h.remove(),1000);
+}
+
+/* MESSAGES */
+function addMsg(){
+
+    let title=document.getElementById("title").value;
+    let text=document.getElementById("text").value;
+
+    if(!text) return;
+
+    let div=document.createElement("div");
+    div.className="msg";
+
+    div.innerHTML=`
+        <b>${title}</b><br><br>${text}
+        <span class="copy" onclick="copyText(this)">copy</span>
+    `;
+
+    document.getElementById("messages").prepend(div);
+}
+
+function copyText(el){
+    let text=el.parentElement.innerText;
+    navigator.clipboard.writeText(text);
+    alert("Copied ❤");
 }
 
 </script>
