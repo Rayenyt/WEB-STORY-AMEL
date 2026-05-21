@@ -10,7 +10,9 @@ name="viewport"
 content="width=device-width, initial-scale=1.0"
 >
 
-<title>Love Vision Ultra Pro 💖</title>
+<title>
+Love Vision Infinity X 💖
+</title>
 
 <link
 href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -50,7 +52,7 @@ radial-gradient(circle at top,#ff006e,#120018 60%,#000);
 
 color:white;
 
-padding-bottom:80px;
+padding-bottom:120px;
 
 transition:.4s;
 }
@@ -123,7 +125,7 @@ right:15px;
 display:flex;
 gap:10px;
 
-z-index:50;
+z-index:999;
 }
 
 button{
@@ -154,15 +156,72 @@ button:hover{
 transform:scale(1.05);
 }
 
-button:active{
-
-transform:scale(.95);
-}
-
 .delete-btn{
 
 background:
 linear-gradient(45deg,#ff1744,#b00020);
+}
+
+/* =========================
+MUSIC VISUALIZER
+========================= */
+
+.music-visualizer{
+
+position:fixed;
+
+top:20px;
+left:20px;
+
+display:flex;
+gap:5px;
+
+z-index:999;
+}
+
+.music-visualizer span{
+
+width:6px;
+height:20px;
+
+border-radius:20px;
+
+background:
+linear-gradient(#ff006e,#8338ec);
+
+animation:musicWave 1s infinite ease-in-out;
+}
+
+.music-visualizer span:nth-child(2){
+animation-delay:.2s;
+}
+
+.music-visualizer span:nth-child(3){
+animation-delay:.4s;
+}
+
+.music-visualizer span:nth-child(4){
+animation-delay:.6s;
+}
+
+.music-visualizer span:nth-child(5){
+animation-delay:.8s;
+}
+
+@keyframes musicWave{
+
+0%{
+height:15px;
+}
+
+50%{
+height:40px;
+}
+
+100%{
+height:15px;
+}
+
 }
 
 /* =========================
@@ -387,6 +446,179 @@ text-shadow:0 0 40px rgba(255,0,110,.9);
 
 }
 
+.love-counter{
+
+margin-top:20px;
+
+padding:14px 24px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+font-size:18px;
+
+box-shadow:
+0 0 25px rgba(255,0,110,.25);
+}
+
+/* =========================
+QUOTE
+========================= */
+
+.quote-box{
+
+margin-top:60px;
+
+width:90%;
+max-width:850px;
+
+padding:25px;
+
+border-radius:25px;
+
+text-align:center;
+
+font-size:22px;
+
+line-height:1.8;
+
+background:
+rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 0 30px rgba(255,0,110,.15);
+
+z-index:5;
+}
+
+/* =========================
+LOVE LETTER
+========================= */
+
+.love-letter-box{
+
+margin-top:60px;
+
+width:90%;
+max-width:850px;
+
+padding:30px;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 0 30px rgba(255,0,110,.15);
+
+text-align:center;
+
+z-index:5;
+}
+
+.love-letter-box h2{
+
+font-size:35px;
+
+margin-bottom:20px;
+}
+
+#typingText{
+
+font-size:20px;
+
+line-height:1.8;
+
+min-height:90px;
+}
+
+/* =========================
+GALLERY
+========================= */
+
+.love-gallery{
+
+margin-top:60px;
+
+width:90%;
+max-width:1000px;
+
+padding:25px;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.06);
+
+backdrop-filter:blur(18px);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+z-index:5;
+}
+
+.love-gallery h2{
+
+text-align:center;
+
+margin-bottom:25px;
+
+font-size:35px;
+}
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(220px,1fr));
+
+gap:20px;
+}
+
+.gallery-grid img{
+
+width:100%;
+height:240px;
+
+object-fit:cover;
+
+border-radius:25px;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:
+0 0 20px rgba(255,0,110,.15);
+}
+
+.gallery-grid img:hover{
+
+transform:
+scale(1.04)
+rotate(1deg);
+
+box-shadow:
+0 0 35px rgba(255,0,110,.4);
+}
+
 /* =========================
 SECTION
 ========================= */
@@ -484,6 +716,37 @@ resize:none;
 }
 
 /* =========================
+EMOJIS
+========================= */
+
+.emoji-picker{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+margin-top:15px;
+}
+
+.emoji-picker span{
+
+font-size:28px;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.emoji-picker span:hover{
+
+transform:
+scale(1.25)
+rotate(8deg);
+}
+
+/* =========================
 MESSAGES
 ========================= */
 
@@ -525,8 +788,6 @@ transform:translateY(0);
 }
 
 }
-
-/* USER COLORS */
 
 .msg[data-style="pink"]{
 
@@ -594,8 +855,6 @@ background:#ffcc00;
 color:#111;
 }
 
-/* ACTIONS */
-
 .msg-actions{
 
 display:flex;
@@ -638,6 +897,114 @@ transform:scale(1.05);
 }
 
 /* =========================
+TIMER
+========================= */
+
+.love-timer-box{
+
+margin-top:70px;
+
+width:90%;
+max-width:850px;
+
+padding:30px;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+text-align:center;
+
+z-index:5;
+}
+
+.love-timer-box h2{
+
+font-size:36px;
+
+margin-bottom:25px;
+}
+
+.timer-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(120px,1fr));
+
+gap:20px;
+}
+
+.timer-grid div{
+
+padding:20px;
+
+border-radius:25px;
+
+background:
+rgba(255,255,255,.08);
+
+box-shadow:
+0 0 20px rgba(255,0,110,.15);
+}
+
+.timer-grid span{
+
+font-size:40px;
+
+font-weight:700;
+
+display:block;
+}
+
+/* =========================
+FLOATING HEARTS
+========================= */
+
+.floating-heart{
+
+position:fixed;
+
+bottom:-20px;
+
+font-size:25px;
+
+pointer-events:none;
+
+animation:heartFly linear forwards;
+
+z-index:2;
+}
+
+@keyframes heartFly{
+
+0%{
+
+transform:
+translateY(0)
+scale(1);
+
+opacity:1;
+}
+
+100%{
+
+transform:
+translateY(-120vh)
+scale(1.8);
+
+opacity:0;
+}
+
+}
+
+/* =========================
 MODAL
 ========================= */
 
@@ -655,7 +1022,7 @@ display:none;
 justify-content:center;
 align-items:center;
 
-z-index:100;
+z-index:1000;
 }
 
 .modal img{
@@ -668,6 +1035,73 @@ border-radius:20px;
 
 box-shadow:
 0 0 40px rgba(255,255,255,.3);
+}
+
+/* =========================
+FLOATING LOVE
+========================= */
+
+.floating-love-text{
+
+position:fixed;
+
+bottom:20px;
+left:50%;
+
+transform:translateX(-50%);
+
+padding:12px 25px;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+font-size:18px;
+
+box-shadow:
+0 0 25px rgba(255,0,110,.2);
+
+animation:floatingText 3s infinite ease-in-out;
+
+z-index:999;
+}
+
+@keyframes floatingText{
+
+0%{
+transform:translateX(-50%) translateY(0);
+}
+
+50%{
+transform:translateX(-50%) translateY(-10px);
+}
+
+100%{
+transform:translateX(-50%) translateY(0);
+}
+
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer-love{
+
+margin-top:70px;
+
+font-size:16px;
+
+opacity:.8;
+
+letter-spacing:2px;
+
+text-align:center;
+
+z-index:5;
 }
 
 /* =========================
@@ -684,12 +1118,6 @@ background:
 linear-gradient(#ff006e,#8338ec);
 
 border-radius:20px;
-}
-
-::-webkit-scrollbar-track{
-
-background:
-rgba(255,255,255,.05);
 }
 
 /* =========================
@@ -721,7 +1149,7 @@ font-size:55px;
 
 <body>
 
-<!-- TOP BUTTONS -->
+<!-- TOP BAR -->
 
 <div class="top-bar">
 
@@ -735,6 +1163,18 @@ font-size:55px;
 
 </div>
 
+<!-- MUSIC VISUALIZER -->
+
+<div class="music-visualizer">
+
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+<span></span>
+
+</div>
+
 <!-- BACKGROUND -->
 
 <div class="bg" id="bg"></div>
@@ -742,8 +1182,6 @@ font-size:55px;
 <!-- MAIN -->
 
 <div class="container">
-
-<!-- USER -->
 
 <div class="card">
 
@@ -767,8 +1205,6 @@ Forever Mine ❤
 
 </div>
 
-<!-- CENTER -->
-
 <div class="center">
 
 <div
@@ -784,9 +1220,18 @@ onclick="heartClick(event)"
 Two Hearts • One Vision
 </p>
 
+<div class="love-counter">
+
+💖 Together Since:
+<span id="daysTogether">
+0
+</span>
+
+days
+
 </div>
 
-<!-- HER -->
+</div>
 
 <div class="card">
 
@@ -806,6 +1251,63 @@ The light that makes my world beautiful.
 <div class="badge">
 Soul Mate ✨
 </div>
+
+</div>
+
+</div>
+
+<!-- QUOTE -->
+
+<div class="quote-box">
+
+✨
+"Real love is not finding someone perfect,
+it's loving someone imperfect perfectly."
+✨
+
+</div>
+
+<!-- LOVE LETTER -->
+
+<div class="love-letter-box">
+
+<h2>
+💌 Secret Love Letter
+</h2>
+
+<p id="typingText"></p>
+
+</div>
+
+<!-- GALLERY -->
+
+<div class="love-gallery">
+
+<h2>
+📸 Memories Gallery
+</h2>
+
+<div class="gallery-grid">
+
+<img
+src="https://files.catbox.moe/f7x9f6.jpg"
+onclick="openImg(this.src)"
+>
+
+<img
+src="https://files.catbox.moe/xvqhco.jpg"
+onclick="openImg(this.src)"
+>
+
+<img
+src="https://picsum.photos/400/400?random=1"
+onclick="openImg(this.src)"
+>
+
+<img
+src="https://picsum.photos/400/400?random=2"
+onclick="openImg(this.src)"
+>
 
 </div>
 
@@ -856,6 +1358,18 @@ id="text"
 placeholder="Write your love message here..."
 ></textarea>
 
+<div class="emoji-picker">
+
+<span onclick="addEmoji('❤️')">❤️</span>
+<span onclick="addEmoji('🥺')">🥺</span>
+<span onclick="addEmoji('💖')">💖</span>
+<span onclick="addEmoji('😘')">😘</span>
+<span onclick="addEmoji('🫶')">🫶</span>
+<span onclick="addEmoji('😍')">😍</span>
+<span onclick="addEmoji('💕')">💕</span>
+
+</div>
+
 <button onclick="addMsg()">
 Add ❤️
 </button>
@@ -870,6 +1384,56 @@ class="delete-btn"
 </div>
 
 <div id="messages"></div>
+
+</div>
+
+<!-- TIMER -->
+
+<div class="love-timer-box">
+
+<h2>
+⏳ Live Love Timer
+</h2>
+
+<div class="timer-grid">
+
+<div>
+<span id="days">0</span>
+<p>Days</p>
+</div>
+
+<div>
+<span id="hours">0</span>
+<p>Hours</p>
+</div>
+
+<div>
+<span id="minutes">0</span>
+<p>Minutes</p>
+</div>
+
+<div>
+<span id="seconds">0</span>
+<p>Seconds</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- FLOATING LOVE -->
+
+<div class="floating-love-text">
+
+❤️ Endless Love ❤️
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer-love">
+
+Made with ❤️ by Rayen & Alma
 
 </div>
 
@@ -915,7 +1479,7 @@ BACKGROUND
 const bg =
 document.getElementById("bg");
 
-for(let i=0;i<140;i++){
+for(let i=0;i<150;i++){
 
 let s =
 document.createElement("span");
@@ -932,6 +1496,100 @@ Math.random();
 bg.appendChild(s);
 
 }
+
+/* =========================
+LOVE COUNTER
+========================= */
+
+const loveDate =
+new Date("2024-01-01");
+
+const today =
+new Date();
+
+const diffTime =
+today - loveDate;
+
+const days =
+Math.floor(
+diffTime / (1000*60*60*24)
+);
+
+document
+.getElementById("daysTogether")
+.innerText = days;
+
+/* =========================
+LIVE TIMER
+========================= */
+
+const startDate =
+new Date("2024-01-01T00:00:00");
+
+function updateLoveTimer(){
+
+const now =
+new Date();
+
+const diff =
+now - startDate;
+
+const d =
+Math.floor(diff / (1000*60*60*24));
+
+const h =
+Math.floor(
+(diff / (1000*60*60)) % 24
+);
+
+const m =
+Math.floor(
+(diff / (1000*60)) % 60
+);
+
+const s =
+Math.floor(
+(diff / 1000) % 60
+);
+
+document.getElementById("days").innerText = d;
+document.getElementById("hours").innerText = h;
+document.getElementById("minutes").innerText = m;
+document.getElementById("seconds").innerText = s;
+
+}
+
+setInterval(updateLoveTimer,1000);
+
+updateLoveTimer();
+
+/* =========================
+TYPING LOVE LETTER
+========================= */
+
+const loveMessage =
+
+"Every moment with you feels like a beautiful dream that I never want to end. ❤️";
+
+let i = 0;
+
+function typingEffect(){
+
+if(i < loveMessage.length){
+
+document
+.getElementById("typingText")
+.innerHTML += loveMessage.charAt(i);
+
+i++;
+
+setTimeout(typingEffect,50);
+
+}
+
+}
+
+typingEffect();
 
 /* =========================
 MODE
@@ -1024,7 +1682,55 @@ window.closeImg =
 closeImg;
 
 /* =========================
-HEART EFFECT
+EMOJI PICKER
+========================= */
+
+function addEmoji(emoji){
+
+const textarea =
+document.getElementById("text");
+
+textarea.value += emoji;
+
+}
+
+window.addEmoji =
+addEmoji;
+
+/* =========================
+FLOATING HEARTS
+========================= */
+
+function createFloatingHeart(){
+
+const heart =
+document.createElement("div");
+
+heart.className =
+"floating-heart";
+
+heart.innerHTML =
+["❤️","💖","💕","💘","💞"]
+[Math.floor(Math.random()*5)];
+
+heart.style.left =
+Math.random()*100+"vw";
+
+heart.style.animationDuration =
+(Math.random()*4+4)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+
+}
+
+setInterval(createFloatingHeart,700);
+
+/* =========================
+HEART CLICK EFFECT
 ========================= */
 
 function heartClick(e){
