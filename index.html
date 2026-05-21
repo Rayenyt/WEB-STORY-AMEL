@@ -1299,16 +1299,6 @@ src="https://files.catbox.moe/xvqhco.jpg"
 onclick="openImg(this.src)"
 >
 
-<img
-src="https://picsum.photos/400/400?random=1"
-onclick="openImg(this.src)"
->
-
-<img
-src="https://picsum.photos/400/400?random=2"
-onclick="openImg(this.src)"
->
-
 </div>
 
 </div>
@@ -1524,20 +1514,17 @@ LIVE LOVE TIMER
 ========================= */
 
 /*
-CHANGE TIMER TO:
-1 YEAR
+START FROM:
+4 DAYS
+ASCENDING TIMER
+24H SYSTEM
 */
 
 const startDate =
-new Date();
-
-/* 1 YEAR */
-
-const endDate =
 new Date(
-startDate.getTime()
-+
-(365 * 24 * 60 * 60 * 1000)
+Date.now()
+-
+(4 * 24 * 60 * 60 * 1000)
 );
 
 /* UPDATE TIMER */
@@ -1548,41 +1535,7 @@ const now =
 new Date();
 
 const diff =
-endDate - now;
-
-/* FINISHED */
-
-if(diff <= 0){
-
-document.querySelector(
-".love-timer-box"
-).innerHTML = `
-
-<h2 style="
-font-size:45px;
-color:#ff4da6;
-animation:pulse 1.5s infinite;
-">
-
-💖 Forever Together 💖
-
-</h2>
-
-<p style="
-margin-top:20px;
-font-size:22px;
-line-height:1.8;
-">
-
-One beautiful year of love
-has passed ❤️
-
-</p>
-
-`;
-
-return;
-}
+now - startDate;
 
 /* TIME */
 
@@ -1620,7 +1573,6 @@ document.getElementById("seconds").innerText = s;
 setInterval(updateLoveTimer,1000);
 
 updateLoveTimer();
-
 /* =========================
 TYPING LOVE LETTER
 ========================= */
