@@ -1509,22 +1509,36 @@ document
 .getElementById("daysTogether")
 .innerText = days;
 
-/* =========================
+//* =========================
 LIVE LOVE TIMER
 ========================= */
 
 /*
-START FROM:
-4 DAYS
-ASCENDING TIMER
-24H SYSTEM
+SAVE TIMER EVEN AFTER REFRESH
 */
+
+let savedStartDate =
+localStorage.getItem("loveStartDate");
+
+/* FIRST TIME */
+
+if(!savedStartDate){
+
+savedStartDate =
+new Date().getTime();
+
+localStorage.setItem(
+"loveStartDate",
+savedStartDate
+);
+
+}
+
+/* START DATE */
 
 const startDate =
 new Date(
-Date.now()
--
-(4 * 24 * 60 * 60 * 1000)
+parseInt(savedStartDate)
 );
 
 /* UPDATE TIMER */
@@ -1829,6 +1843,7 @@ if(error){
 console.log(error);
 
 return;
+
 }
 
 const messagesDiv =
@@ -1836,8 +1851,25 @@ document.getElementById("messages");
 
 messagesDiv.innerHTML = "";
 
-const fragment =
-document.createDocumentFragment();
+/* NO DATA */
+
+if(!data || !data.length){
+
+messagesDiv.innerHTML = `
+
+<div class="msg" data-style="pink">
+
+<b>No messages yet ❤️</b>
+
+</div>
+
+`;
+
+return;
+
+}
+
+/* LOOP */
 
 data.forEach((msg)=>{
 
@@ -1862,13 +1894,13 @@ ${msg.username || "Anonymous"}
 
 <b>
 
-${msg.title || "Love Message"}
+${msg.title || "Love Message ❤️"}
 
 </b>
 
 <br><br>
 
-${msg.text}
+${msg.text || ""}
 
 <div class="msg-actions">
 
@@ -1898,12 +1930,9 @@ onclick="deleteMessage(${msg.id})"
 
 `;
 
-fragment.appendChild(div);
+messagesDiv.appendChild(div);
 
 });
-
-messagesDiv
-.appendChild(fragment);
 
 }
 
@@ -1940,12 +1969,23 @@ document
 .getElementById("styleSelect")
 .value;
 
+/* ANONYMOUS */
+
 if(!username){
 
-alert("Enter your name ❤");
+username = "Anonymous";
 
-return;
 }
+
+/* DEFAULT TITLE */
+
+if(!title){
+
+title = "Love Message ❤️";
+
+}
+
+/* EMPTY TEXT */
 
 if(!text){
 
@@ -1965,6 +2005,8 @@ await supabase
 .select("*")
 .eq("text",text);
 
+/* EXISTS */
+
 if(data.length){
 
 alert(
@@ -1977,6 +2019,8 @@ return;
 }
 
 /* INSERT */
+
+const { error } =
 
 await supabase
 .from("messages")
@@ -1996,6 +2040,21 @@ style:style
 
 ]);
 
+/* ERROR */
+
+if(error){
+
+console.log(error);
+
+alert("Error saving message");
+
+sending = false;
+
+return;
+}
+
+/* CLEAR */
+
 document
 .getElementById("username")
 .value = "";
@@ -2007,6 +2066,10 @@ document
 document
 .getElementById("text")
 .value = "";
+
+/* RELOAD */
+
+loadMessages();
 
 sending = false;
 
